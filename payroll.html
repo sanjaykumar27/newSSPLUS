@@ -511,13 +511,13 @@
                                             <a class="nav-link fs-5 rounded-pill active" data-bs-toggle="tab" href="#kt_expense_records" id="kt_expense_records_title">Expense Records</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link fs-5 rounded-pill fw-bold" onclick="GetBranchList()" data-bs-toggle="tab" href="#kt_branch_setting" id="kt_branch_setting_title">Branch Settings</a>
+                                            <a class="nav-link fs-5 rounded-pill fw-bold" onclick="GetBranchList()" data-bs-toggle="tab" href="#kt_advance_payments" id="kt_advance_payments_title">Advance Payments</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link fs-5 rounded-pill fw-bold" onclick="GetDeptList()" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_department_setting" id="kt_department_setting_title">Department Settings</a>
+                                            <a class="nav-link fs-5 rounded-pill fw-bold" onclick="GetDeptList()" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_department_setting" id="kt_department_setting_title">Allowance/Bonus</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link fs-5 rounded-pill fw-bold" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_designation_setting" id="kt_designation_setting_title">Designation Settings</a>
+                                            <a class="nav-link fs-5 rounded-pill fw-bold" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_designation_setting" id="kt_designation_setting_title">Deductions</a>
                                         </li>
                                         <li class="nav-item ">
                                             <a class="nav-link fs-5 rounded-pill fw-bold" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_locale_setting" id="kt_locale_setting_title">Locale Settings</a>
@@ -541,7 +541,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-toolbar">
-                                                        <button class="btn btn-primary">Add Expense</button>
+                                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreateExpense">Add Expense</button>
                                                         <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
                                                         </button>
                                                         <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
@@ -556,8 +556,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
+                                                    <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                        <thead class="bg-light-primary">
                                                             <tr>
                                                                 <th>S.no</th>
                                                                 <th>Date</th>
@@ -565,63 +565,145 @@
                                                                 <th>Credit</th>
                                                                 <th>Item</th>
                                                                 <th>Description</th>
-                                                                <th></th>
+                                                                <th>Action</th>
                                                             </tr>
                                                         </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>28-09-2021</td>
+                                                                <td>-s500</td>
+                                                                <td>0</td>
+                                                                <td>Snacks</td>
+                                                                <td>Purchased snaks for team</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                            <i class="fas fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                            <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>28-09-2021</td>
+                                                                <td>0</td>
+                                                                <td>+1500</td>
+                                                                <td>Paper Sell</td>
+                                                                <td>Got money from office paper sell</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                            <i class="fas fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                            <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
                                                     </table>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="kt_branch_setting" role="tabpanel">
+                                        <div class="tab-pane fade" id="kt_advance_payments" role="tabpanel">
                                             <form method="post" class="form w-100" id="kt_create_branch">
                                                 <div class="w-100 mt-5" style="min-height:280px">
-                                                    <div class="table-responsive" id="branch-list">
-                                                        <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
-                                                            <thead class="bg-light-primary">
-                                                                <tr class="text-start fw-bolder fs-7 text-uppercase gs-0">
-                                                                    <th></th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Branch Name</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Branch Head</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Reporting Manager</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Branch Address</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Action</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="branch-list-table">
-
-                                                            </tbody>
-                                                        </table>
+                                                    <div class="align-items-center d-flex justify-content-between mb-5">
+                                                    <div class="card-title">
+                                                        <div class="d-flex align-items-center position-relative my-1">
+                                                            <div class="me-5">
+                                                                <label for="">Start Date</label>
+                                                                <input type="date" class="form-control" value="2021-09-01" id="current-start-date">
+                                                            </div>
+                                                            <div>
+                                                                <label for="">End Date</label>
+                                                                <input type="date" class="form-control" value="2021-09-30" id="current-end-date">
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div id="add-more-branch" style="display: none;">
-                                                        <span class="fs-3 fw-bolder mb-5">Branch #1</span>
-                                                        <div class="row mt-4">
-                                                            <div class="col-4">
-                                                                <input type="hidden" id="branch_id">
-                                                                <label class=" fs-6 fw-bold mb-2 required">Branch Name</label>
-                                                                <input type="text" id="branchName" required name="branchName" class="form-control">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <label class=" fs-6 fw-bold mb-2 required">Branch Head</label>
-                                                                <input type="text" id="branchHead" required name="branchHead" class="form-control">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <label class=" fs-6 fw-bold mb-2 required">Reporting Manager</label>
-                                                                <input type="text" id="manager" required name="manager" class=" form-control ">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mt-5 ">
-                                                            <div class="col-6 ">
-                                                                <label class="fs-5 fw-bold mb-2 required ">Branch Address</label>
-                                                                <textarea type="text " id="address" class="form-control" required name="address" rows="2 "></textarea>
-                                                            </div>
-                                                        </div>
-														 <div class="d-flex justify-content-end pt-15">
-															<a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_branch_setting', 'kt_expense_records') "><i class="fas fa-arrow-left "></i> Back</a>
-															<button id="create-branch-submit" class="btn btn-primary btn-sm " type="submit " onclick=" ">Save & Continue <i class="fas fa-arrow-right "></i><span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-branch-spinner"></span></button>
-														</div>
+                                                    <div class="card-toolbar">
+                                                        <button class="btn btn-primary me-3 btn-sm" data-bs-toggle="modal" data-bs-target="#modalPaymentLoan">Add Payment/Loan</button>
+														<button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalRepayment">Add Repayment</button>
+                                                        <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                            <i class="fas fa-download"></i>
+                                                        </button>
                                                     </div>
                                                 </div>
+                                                <div class="row mb-5">
+                                                    <div class="col">
+                                                        <span class="fs-5 fw-boldest me-1 text-danger">Total Debit: </span><b>5000</b>
+                                                        <span class="ms-5 fs-5 fw-boldest me-1 text-primary">Total Credit: </span><b>15000</b>
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                        <thead class="bg-light-primary">
+                                                            <tr>
+                                                                <th>S.no</th>
+                                                                <th>Date</th>
+                                                                <th>Debit</th>
+                                                                <th>Credit</th>
+                                                                <th>Item</th>
+                                                                <th>Description</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>28-09-2021</td>
+                                                                <td>-s500</td>
+                                                                <td>0</td>
+                                                                <td>Snacks</td>
+                                                                <td>Purchased snaks for team</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                            <i class="fas fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                            <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>28-09-2021</td>
+                                                                <td>0</td>
+                                                                <td>+1500</td>
+                                                                <td>Paper Sell</td>
+                                                                <td>Got money from office paper sell</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                            <i class="fas fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                            <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                  </div>
 											</form>
                                             <div class="d-flex justify-content-between pt-15 ">
                                                 <div class="col-auto ">
@@ -635,9 +717,9 @@
                                                 <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer ">
                                                     <thead class="bg-light-primary ">
                                                         <tr class="text-start fw-bolder fs-7 text-uppercase gs-0 ">
-                                                            <th></th>
+                                                           
                                                             <th class="fw-boldest text-gray-700 text-uppercase text-center ">S.no</th>
-                                                            <th class="fw-boldest text-gray-700 text-uppercase ">Department Head</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase ">Date</th>
                                                             <th class="fw-boldest text-gray-700 text-uppercase ">Department Head Employee</th>
                                                             <th class="fw-boldest text-gray-700 text-uppercase ">Action</th>
                                                         </tr>
@@ -662,7 +744,7 @@
 														</div>
 													</div>
 													<div class="d-flex justify-content-end pt-15">
-														<a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_department_setting', 'kt_branch_setting') "><i class="fas fa-arrow-left "></i> Back</a>
+														<a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_department_setting', 'kt_advance_payments') "><i class="fas fa-arrow-left "></i> Back</a>
 														<button class="btn btn-primary btn-sm" id="create-department-submit">Save & Continue <span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-department-spinner"></span><i class="fas fa-arrow-right "></i></button>
 													</div>
 												</form>
@@ -971,6 +1053,49 @@
 				</svg>
 			</span>
         <!--end::Svg Icon-->
+    </div>
+
+    <div class="modal fade" id="modalCreateExpense" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Expense</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5 fw-bold mb-2 required">Expense Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5 fw-bold mb-2 required">Expense Type</label>
+                                <select name="" class="form-select" id="">
+                                    <option value="" selected>Select</option>
+                                    <option value="">Debit</option>
+                                    <option value="">Credit</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5 fw-bold mb-2 required">Item</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label class=" fs-5 fw-bold mb-2 required">Description</label>
+                                <textarea name="" id="" rows="2" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="assets/plugins/global/plugins.bundle.js"></script>
