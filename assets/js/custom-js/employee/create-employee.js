@@ -4,6 +4,11 @@ $(function() {
         GetEmpDetail(window.location.search.substring(1).split('emp_id=')[1]);
     }
 
+    $("#non-ctc-payroll-setting").hide();
+    $("#ctc-payroll-setting").hide();
+
+    
+
 	$("#kt_create_access").validate({
         rules: {
             empstatus: {
@@ -200,4 +205,15 @@ function GetEmpDetail(emp_id) {
             $("#delete-modal-emp-id").val(data.id);
         }
     });
+}
+
+function PayrollSetting()
+{
+    if($("#payroll_type").val() == 'NonCTC') {
+        $("#non-ctc-payroll-setting").show();
+        $("#ctc-payroll-setting").hide();
+    } else {
+        $("#ctc-payroll-setting").show();
+        $("#non-ctc-payroll-setting").hide();
+    }
 }

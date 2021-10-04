@@ -514,13 +514,10 @@
                                             <a class="nav-link fs-5 rounded-pill fw-bold" onclick="GetBranchList()" data-bs-toggle="tab" href="#kt_advance_payments" id="kt_advance_payments_title">Advance Payments</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link fs-5 rounded-pill fw-bold" onclick="GetDeptList()" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_department_setting" id="kt_department_setting_title">Allowance/Bonus</a>
+                                            <a class="nav-link fs-5 rounded-pill fw-bold" onclick="GetDeptList()" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_allowance_setting" id="kt_allowance_setting_title">Allowance/Bonus</a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a class="nav-link fs-5 rounded-pill fw-bold" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_designation_setting" id="kt_designation_setting_title">Deductions</a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link fs-5 rounded-pill fw-bold" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_locale_setting" id="kt_locale_setting_title">Locale Settings</a>
+                                            <a class="nav-link fs-5 rounded-pill fw-bold" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_deductions" id="kt_deductions_title">Deductions</a>
                                         </li>
                                     </ul>
 
@@ -571,8 +568,8 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td>1</td>
-                                                                <td>28-09-2021</td>
-                                                                <td>-s500</td>
+                                                                <td>01 April Thurs, 2021</td>
+                                                                <td>-500</td>
                                                                 <td>0</td>
                                                                 <td>Snacks</td>
                                                                 <td>Purchased snaks for team</td>
@@ -591,7 +588,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>1</td>
-                                                                <td>28-09-2021</td>
+                                                                <td>01 May Thurs, 2021</td>
                                                                 <td>0</td>
                                                                 <td>+1500</td>
                                                                 <td>Paper Sell</td>
@@ -631,8 +628,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-toolbar">
-                                                        <button class="btn btn-primary me-3 btn-sm" data-bs-toggle="modal" data-bs-target="#modalPaymentLoan">Add Payment/Loan</button>
-														<button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalRepayment">Add Repayment</button>
+                                                        <button class="btn btn-primary me-3 btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalPaymentLoan">Add Payment/Loan</button>
+														<button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalRepayment">Add Repayment</button>
                                                         <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
                                                         </button>
                                                         <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
@@ -642,8 +639,9 @@
                                                 </div>
                                                 <div class="row mb-5">
                                                     <div class="col">
-                                                        <span class="fs-5 fw-boldest me-1 text-danger">Total Debit: </span><b>5000</b>
-                                                        <span class="ms-5 fs-5 fw-boldest me-1 text-primary">Total Credit: </span><b>15000</b>
+                                                        <span class="fs-5 fw-boldest me-1 text-danger">Total Loan Taken: </span><b>5000</b>
+                                                        <span class="ms-5 fs-5 fw-boldest me-1 text-primary">Total Repayment: </span><b>15000</b>
+                                                        <span class="ms-5 fs-5 fw-boldest me-1 text-info">Total Balance: </span><b>15000</b>
                                                     </div>
                                                 </div>
                                                 <div class="table-responsive">
@@ -652,21 +650,23 @@
                                                             <tr>
                                                                 <th>S.no</th>
                                                                 <th>Date</th>
-                                                                <th>Debit</th>
-                                                                <th>Credit</th>
-                                                                <th>Item</th>
-                                                                <th>Description</th>
+                                                                <th>Loan Number</th>
+                                                                <th>Payment Type</th>
+                                                                <th>Employee Name</th>
+                                                                <th>Emp ID</th>
+                                                                <th>Amount</th>
                                                                 <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
                                                                 <td>1</td>
-                                                                <td>28-09-2021</td>
-                                                                <td>-s500</td>
-                                                                <td>0</td>
-                                                                <td>Snacks</td>
-                                                                <td>Purchased snaks for team</td>
+                                                                <td>01 April Thurs, 2021</td>
+                                                                <td>SSP Loan 01</td>
+                                                                <td>Loan</td>
+                                                                <td>Divesh Kumar</td>
+                                                                <td>SSP01</td>
+                                                                <td>+10000</td>
                                                                 <td>
                                                                     <div class="dropdown">
                                                                         <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -681,12 +681,13 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>1</td>
-                                                                <td>28-09-2021</td>
-                                                                <td>0</td>
-                                                                <td>+1500</td>
-                                                                <td>Paper Sell</td>
-                                                                <td>Got money from office paper sell</td>
+                                                                <td>2</td>
+                                                                <td>>01 May Thurs, 2021</td>
+                                                                <td>SSP Loan 01</td>
+                                                                <td>Repayment</td>
+                                                                <td>Divesh Kumar</td>
+                                                                <td>SSP01</td>
+                                                                <td>-2000</td>
                                                                 <td>
                                                                     <div class="dropdown">
                                                                         <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -705,101 +706,177 @@
                                                 </div>
                                                   </div>
 											</form>
-                                            <div class="d-flex justify-content-between pt-15 ">
-                                                <div class="col-auto ">
-                                                    <!-- <button class="btn btn-secondary btn-sm" type="button " id="add-branch" style="display: none;"><i class="fas fa-plus"></i> Add More Branch</button> -->
-                                                    <button class="btn btn-secondary btn-sm" type="button " id="add-branch-static" onclick="showDiv('add-more-branch');showDiv('add-branch');hideDiv('add-branch-static');hideDiv('branch-list');"><i class="fas fa-plus "></i>Create Branch</button>
-                                                </div>
-                                            </div>
                                         </div>
-                                        <div class="tab-pane fade " id="kt_department_setting" role="tabpanel ">
-                                            <div class="table-responsive mt-5 " id="department-list" style="min-height:280px; ">
-                                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer ">
-                                                    <thead class="bg-light-primary ">
-                                                        <tr class="text-start fw-bolder fs-7 text-uppercase gs-0 ">
-                                                           
-                                                            <th class="fw-boldest text-gray-700 text-uppercase text-center ">S.no</th>
-                                                            <th class="fw-boldest text-gray-700 text-uppercase ">Date</th>
-                                                            <th class="fw-boldest text-gray-700 text-uppercase ">Department Head Employee</th>
-                                                            <th class="fw-boldest text-gray-700 text-uppercase ">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="department-list-table"></tbody>
-                                                </table>
-                                            </div>
-                                            <div class="w-100 mt-5 " id="add-more-department" style="display:none ">
-												<form method="post" class="form w-100" id="kt_create_department">
-													<div id="add-more-department" style="min-height:280px;">
-														<div class="row mt-4 ">
-															<div class="col-4 ">
-																<label class=" fs-6 fw-bold mb-2 required ">Department Head</label>
-																<input type="text" class="form-control" name="deptName" id="deptName">
-																<input type="hidden" id="dept_id">
-																<input type="hidden" id="organizationId">
-															</div>
-															<div class="col-4 ">
-																<label class=" fs-6 fw-bold mb-2 required ">Department Head Employee</label>
-																<input type="text" class="form-control" name="deptHead" id="deptHead">
-															</div>
-														</div>
-													</div>
-													<div class="d-flex justify-content-end pt-15">
-														<a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_department_setting', 'kt_advance_payments') "><i class="fas fa-arrow-left "></i> Back</a>
-														<button class="btn btn-primary btn-sm" id="create-department-submit">Save & Continue <span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-department-spinner"></span><i class="fas fa-arrow-right "></i></button>
-													</div>
-												</form>
-                                            </div>
-
-                                            <div class="d-flex justify-content-between mt-5 ">
-                                                <div class="col-auto ">
-                                                    <!-- <button class="btn btn-secondary btn-sm " type="button " id="add-department" style="display: none;"><i class="fas fa-plus "></i> 
-                                                        Add More Department
-                                                   </button> -->
-                                                    <button class="btn btn-secondary btn-sm " type="button " id="add-department-static" onclick="showDiv( 'add-more-department');showDiv('add-department');hideDiv('add-department-static');hideDiv(
-                                                                    'department-list'); "><i class="fas fa-plus "></i> Create Department</button>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade " id="kt_designation_setting" role="tabpanel ">
-                                            
-                                            <div class="table-responsive mt-5 " id="designation-list" style="min-height:280px;display: none; ">
-                                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer ">
-                                                    <thead class="bg-light-primary ">
-                                                        <tr class="text-start fw-bolder fs-7 text-uppercase gs-0 ">
-                                                            <th></th>
-                                                            <th class="fw-boldest text-gray-700 text-uppercase text-center ">S.no</th>
-                                                            <th class="fw-boldest text-gray-700 text-uppercase ">Designation</th>
-                                                            <th class="fw-boldest text-gray-700 text-uppercase ">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="designation-list-table"></tbody>
-                                                </table>
-                                            </div>
-											<form method="post" class="form w-100" id="kt_create_department">
-                                            <div class="w-100 " id="add-more-designation" style="min-height:280px " style="display: none; ">
-                                                <div class="row mt-4 ">
-                                                    <div class="col-6 ">
-                                                        <label class=" fs-6 fw-bold mb-2 required ">Designation</label>
-                                                        <input type="number " class="form-control ">
+                                        <div class="tab-pane fade " id="kt_allowance_setting" role="tabpanel ">
+                                            <div class="w-100 mt-5" style="min-height:280px">
+                                                <div class="align-items-center d-flex justify-content-between mb-5">
+                                                <div class="card-title">
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <div class="me-5">
+                                                            <label for="">Start Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-01" id="current-start-date">
+                                                        </div>
+                                                        <div>
+                                                            <label for="">End Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-30" id="current-end-date">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="d-flex justify-content-between pt-15 ">
-                                                <div class="col-auto ">
-                                                    <!--<button class="btn btn-secondary btn-sm " type="button" id="add-designation" style="display: none;"><img src="assets/media/icons/duotone/Code/Plus.svg "/>
-													 Add More Designation</button> -->
-                                                    <button class="btn btn-secondary btn-sm " type="button " id="add-designation-static" onclick="showDiv( 'add-more-designation');showDiv( 'add-designation');hideDiv( 'add-designation-static');hideDiv(
-                                                                    'designation-list'); "><img src="assets/media/icons/duotone/Code/Plus.svg "/>
-                                                    Create Designation</button>
-                                                </div>
-                                                <div>
-                                                    <button class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_designation_setting', 'kt_department_setting') "><i class="fas fa-arrow-left "></i> Back</button>
-                                                    <button class="btn btn-primary btn-sm " onclick="ActivateTab( 'kt_designation_setting', 'kt_locale_setting') ">Save & Continue <i class="fas fa-arrow-right "></i></button>
+                                                <div class="card-toolbar">
+                                                    <button class="btn btn-primary me-3 btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalAllowance">Add Allowance/Bonus</button>
+                                                    <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
                                                 </div>
                                             </div>
-											</form>
+                                            
+                                            <div class="table-responsive">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                    <thead class="bg-light-primary">
+                                                        <tr>
+                                                            <th>S.no</th>
+                                                            <th>Date</th>
+                                                            <th>Allowance Type</th>
+                                                            <th>Employee Name</th>
+                                                            <th>Emp ID</th>
+                                                            <th>Total Allowance</th>
+                                                            <th>Amount</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>01 April Thurs, 2021</td>
+                                                            <td>Allowance</td>
+                                                            <td>Sanjay Kumar</td>
+                                                            <td>SSP02</td>
+                                                            <td>500</td>
+                                                            <td>+10000</td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <i class="fas fa-ellipsis-v"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                        <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>01 April Thurs, 2021</td>
+                                                            <td>Bonus</td>
+                                                            <td>Divesh Kumar</td>
+                                                            <td>SSP01</td>
+                                                            <td>1000</td>
+                                                            <td>+9000</td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <i class="fas fa-ellipsis-v"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                        <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                              </div>
+                                        </div>
+                                        <div class="tab-pane fade " id="kt_deductions" role="tabpanel ">
+                                            <div class="w-100 mt-5" style="min-height:280px">
+                                                <div class="align-items-center d-flex justify-content-between mb-5">
+                                                <div class="card-title">
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <div class="me-5">
+                                                            <label for="">Start Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-01" id="current-start-date">
+                                                        </div>
+                                                        <div>
+                                                            <label for="">End Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-30" id="current-end-date">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-toolbar">
+                                                    <button class="btn btn-primary me-3 btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalDeductions">Add Deductions</button>
+                                                    <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-primary btn-sm ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="table-responsive">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                    <thead class="bg-light-primary">
+                                                        <tr>
+                                                            <th>S.no</th>
+                                                            <th>Date</th>
+                                                            <th>Deduction Type</th>
+                                                            <th>Employee Name</th>
+                                                            <th>Emp ID</th>
+                                                            <th>Amount</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>01 April Thurs, 2021</td>
+                                                            <td>PF</td>
+                                                            <td>Sanjay Kumar</td>
+                                                            <td>SSP02</td>
+                                                            <td>1500</td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <i class="fas fa-ellipsis-v"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                        <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>01 May Thurs, 2021</td>
+                                                            <td>ESI</td>
+                                                            <td>Divesh Kumar</td>
+                                                            <td>SSP01</td>
+                                                            <td>1400</td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <i class="fas fa-ellipsis-v"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                        <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                              </div>
                                         </div>
                                         <div class="tab-pane fade " id="kt_locale_setting" role="tabpanel">
 											<form method="post" class="form w-100" id="kt_create_settings">
@@ -848,7 +925,7 @@
 													</div>
 												</div>
 												<div class="d-flex justify-content-end pt-15 ">
-													<button class="btn btn-sm btn-secondary me-3 " id="create-setting-submit" onclick="ActivateTab( 'kt_locale_setting', 'kt_designation_setting') "><i class="fas fa-arrow-left "></i> Back</button>
+													<button class="btn btn-sm btn-secondary me-3 " id="create-setting-submit" onclick="ActivateTab( 'kt_locale_setting', 'kt_deductions') "><i class="fas fa-arrow-left "></i> Back</button>
 													<button class="btn btn-primary btn-sm" type="submit" id="create-setting-submit">Submit <span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-setting-spinner"></span></button>
 												</div>
 											</div>
@@ -1066,11 +1143,11 @@
                     <form action="">
                         <div class="row mb-3">
                             <div class="col-lg-4">
-                                <label class=" fs-5 fw-bold mb-2 required">Expense Date</label>
+                                <label class=" fs-5 kt_deductions mb-2 required">Expense Date</label>
                                 <input type="date" class="form-control" required>
                             </div>
                             <div class="col-lg-4">
-                                <label class=" fs-5 fw-bold mb-2 required">Expense Type</label>
+                                <label class=" fs-5 kt_deductions mb-2 required">Expense Type</label>
                                 <select name="" class="form-select" id="">
                                     <option value="" selected>Select</option>
                                     <option value="">Debit</option>
@@ -1078,16 +1155,257 @@
                                 </select>
                             </div>
                             <div class="col-lg-4">
-                                <label class=" fs-5 fw-bold mb-2 required">Item</label>
+                                <label class=" fs-5 kt_deductions mb-2 required">Item</label>
                                 <input type="text" class="form-control" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-lg-6">
-                                <label class=" fs-5 fw-bold mb-2 required">Description</label>
+                                <label class=" fs-5 kt_deductions mb-2 required">Description</label>
                                 <textarea name="" id="" rows="2" class="form-control"></textarea>
                             </div>
                         </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRepayment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Repayment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee ID</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Loan Number</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Payment Type</label>
+                                <input type="text" value="Repayment" disabled class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Payment Term</label>
+                                <input type="number" value="Repayment" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Previous Balance Amount</label>
+                                <input type="text" class="form-control" value="1500" disabled required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Start Date</label>
+                                <input type="date"  class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">End Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Amount</label>
+                                <input type="number" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class=" fs-5  mb-2 required">Description</label>
+                                <textarea name="" id="" rows="2" class="form-control"></textarea>
+                            </div>
+                        </div>  
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPaymentLoan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Advance Payment / Loan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee ID</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Loan Number</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Payment Type</label>
+                                <input type="text" value="Loan" disabled class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Previous Balance Amount</label>
+                                <input type="text" class="form-control" value="1500" disabled required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Amount</label>
+                                <input type="number" class="form-control" required>
+                            </div>
+                           
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <label class=" fs-5  mb-2 required">Description</label>
+                                <textarea name="" id="" rows="2" class="form-control"></textarea>
+                            </div>
+                        </div>  
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAllowance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Allowance / Bonus</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee ID</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Allowance Type</label>
+                                <select name="" class="form-select" id="">
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="Allowance">Allowance</option>
+                                    <option value="Bonus">Bonus</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Total Allowance</label>
+                                <input type="text" class="form-control" value="1500" disabled required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Amount</label>
+                                <input type="number" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label class=" fs-5  mb-2 required">Description</label>
+                                <textarea name="" id="" rows="2" class="form-control"></textarea>
+                            </div>
+                        </div>  
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDeductions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Deductions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Employee ID</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Deductions Type</label>
+                                <select name="" class="form-select" id="">
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="PF">PF</option>
+                                    <option value="ESI">ESI</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Amount</label>
+                                <input type="number" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class=" fs-5  mb-2 required">Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-6">
+                                <label class=" fs-5  mb-2 required">Description</label>
+                                <textarea name="" id="" rows="2" class="form-control"></textarea>
+                            </div>
+                        </div>  
                     </form>
                 </div>
                 <div class="modal-footer">

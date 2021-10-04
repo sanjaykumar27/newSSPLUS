@@ -563,6 +563,12 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane fade" id="kt_branch_setting" role="tabpanel">
+                                            <div class="d-flex justify-content-end">
+                                                <div class="col-auto ">
+                                                    <!-- <button class="btn btn-secondary btn-sm" type="button " id="add-branch" style="display: none;"><i class="fas fa-plus"></i> Add More Branch</button> -->
+                                                    <button class="btn btn-primary btn-sm" type="button " id="add-branch-static" onclick="showDiv('add-more-branch');showDiv('add-branch');hideDiv('add-branch-static');hideDiv('branch-list');"><i class="fas fa-plus "></i>Create Branch</button>
+                                                </div>
+                                            </div>
                                             <form method="post" class="form w-100" id="kt_create_branch">
                                                 <div class="w-100 mt-5" style="min-height:280px">
                                                     <div class="table-responsive" id="branch-list">
@@ -613,14 +619,18 @@
                                                     </div>
                                                 </div>
 											</form>
-                                            <div class="d-flex justify-content-between pt-15 ">
-                                                <div class="col-auto ">
-                                                    <!-- <button class="btn btn-secondary btn-sm" type="button " id="add-branch" style="display: none;"><i class="fas fa-plus"></i> Add More Branch</button> -->
-                                                    <button class="btn btn-secondary btn-sm" type="button " id="add-branch-static" onclick="showDiv('add-more-branch');showDiv('add-branch');hideDiv('add-branch-static');hideDiv('branch-list');"><i class="fas fa-plus "></i>Create Branch</button>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                         <div class="tab-pane fade " id="kt_department_setting" role="tabpanel ">
+                                            <div class="d-flex justify-content-end">
+                                                <div class="col-auto ">
+                                                    <!-- <button class="btn btn-secondary btn-sm " type="button " id="add-department" style="display: none;"><i class="fas fa-plus "></i> 
+                                                        Add More Department
+                                                   </button> -->
+                                                    <button class="btn btn-primary btn-sm " type="button " id="add-department-static" onclick="showDiv( 'add-more-department');showDiv('add-department');hideDiv('add-department-static');hideDiv(
+                                                                    'department-list'); "><i class="fas fa-plus "></i> Create Department</button>
+                                                </div>
+                                            </div>
                                             <div class="table-responsive mt-5 " id="department-list" style="min-height:280px; ">
                                                 <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer ">
                                                     <thead class="bg-light-primary ">
@@ -658,16 +668,7 @@
 												</form>
                                             </div>
 
-                                            <div class="d-flex justify-content-between mt-5 ">
-                                                <div class="col-auto ">
-                                                    <!-- <button class="btn btn-secondary btn-sm " type="button " id="add-department" style="display: none;"><i class="fas fa-plus "></i> 
-                                                        Add More Department
-                                                   </button> -->
-                                                    <button class="btn btn-secondary btn-sm " type="button " id="add-department-static" onclick="showDiv( 'add-more-department');showDiv('add-department');hideDiv('add-department-static');hideDiv(
-                                                                    'department-list'); "><i class="fas fa-plus "></i> Create Department</button>
-                                                </div>
-                                                
-                                            </div>
+                                            
                                         </div>
                                         <div class="tab-pane fade " id="kt_designation_setting" role="tabpanel ">
                                             
