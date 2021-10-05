@@ -877,7 +877,103 @@
                                                         </div>
                                                     </div>
                                                     <div id="ctc-payroll-setting">
-
+                                                        <div class="row mt-4">
+                                                            <div class="col-4">
+                                                                <label for="">Salary Template Name</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <label for="">Salary Cycle</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <label for="">Total Working days for payroll calculation every month</label>
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-4">
+                                                            <div class="col-4">
+                                                                <label for="">Starting Account Balance</label>
+                                                                <input type="number" class="form-control">
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <label for="">Monthly Salary</label>
+                                                                <input type="number" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <p class="fs-3 fw-bolder text-uppercase border-secondary border-bottom mt-5">Earning</p>
+                                                        <div class="bg-light border d-flex mt-4 p-4 rounded-3">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_basic_da" value="salary_basic_da" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_basic_da">Basic + DA</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_hra" value="salary_hra" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_hra">HRA</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_transportation_allowance" value="salary_transportation_allowance" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_transportation_allowance">Transportation Allowance</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_medical_allowance" value="salary_medical_allowance" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_medical_allowance">Medical Allowance</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_special_allowance" value="salary_special_allowance" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_special_allowance">Special Allowance</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_leave_travel_allowance" value="salary_leave_travel_allowance" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_leave_travel_allowance">Leave Travel Allowance</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_meal_allowance" value="salary_meal_allowance" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_meal_allowance">Meal Allowance</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="salary_bonus" value="salary_bonus" onchange="SalarySetting()">
+                                                                <label class="form-check-label" for="salary_bonus">Bonus</label>
+                                                              </div>
+                                                        </div>
+                                                        <div class="row mt-4">
+                                                            <div class="col-3 mt-4" id="div_basic_da">
+                                                                <label for="">Basic + DA</label>
+                                                                <input type="number" class="form-control" id="input_basic_da" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_hra">
+                                                                <label for="">HRA</label>
+                                                                <input type="number" class="form-control" id="input_hra" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_ta">
+                                                                <label for="">Transportation Allowance</label>
+                                                                <input type="number" class="form-control" id="input_transportation_allowance" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_ma">
+                                                                <label for="">Medical Allowance</label>
+                                                                <input type="number" class="form-control" id="input_medical_allowance" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_sa">
+                                                                <label for="">Special Allowance</label>
+                                                                <input type="number" class="form-control" id="input_special_allowance" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_lta"> 
+                                                                <label for="">Leave Travel Allowance</label>
+                                                                <input type="number" class="form-control" id="input_leave_travel_allowance" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_mal">
+                                                                <label for="">Meal Allowance</label>
+                                                                <input type="number" class="form-control" id="input_meal_allowance" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_bonus">
+                                                                <label for="">Bonus</label>
+                                                                <input type="number" class="form-control" id="input_bonus" onchange="TotalSalary()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_total_salary">
+                                                                <label for="">Total Salary</label>
+                                                                <input type="number" class="form-control" id="input_total_salary" onchange="TotalSalary()">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex justify-content-end pt-15">

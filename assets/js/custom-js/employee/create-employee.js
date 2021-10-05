@@ -4,10 +4,18 @@ $(function() {
         GetEmpDetail(window.location.search.substring(1).split('emp_id=')[1]);
     }
 
+    $("#div_basic_da").hide();
+    $("#div_hra").hide();
+    $("#div_ta").hide();
+    $("#div_ma").hide();
+    $("#div_sa").hide();
+    $("#div_lta").hide();
+    $("#div_mal").hide();
+    $("#div_bonus").hide();
+    
+
     $("#non-ctc-payroll-setting").hide();
     $("#ctc-payroll-setting").hide();
-
-    
 
 	$("#kt_create_access").validate({
         rules: {
@@ -167,10 +175,8 @@ $(function() {
                     }, 1000);
                 },
                 error: function(data) {
-					
                     $("#create-employee-spinner").hide();
                     $("#create-employee-submit").removeAttr('disabled', 'disabled');
-					
 					$("#error-message-area").text(data.responseJSON.message);
 					$("#modalError").modal('show');
                 }
@@ -216,4 +222,70 @@ function PayrollSetting()
         $("#ctc-payroll-setting").show();
         $("#non-ctc-payroll-setting").hide();
     }
+}
+
+function SalarySetting() {
+    if($("#salary_basic_da").prop("checked")) {
+        $("#div_basic_da").show();
+    } else {
+        $("#div_basic_da").hide();
+        $("#input_basic_da").val('0');
+    }
+
+    if($("#salary_hra").prop("checked")) {
+        $("#div_hra").show();
+    } else {
+        $("#div_hra").hide();
+        $("#input_hra").val('0');
+    }
+
+    if($("#salary_transportation_allowance").prop("checked")) { 
+        $("#div_ta").show();
+    } else {
+        $("#div_ta").hide();
+        $("#input_transportation_allowance").val('0');
+    }
+
+    if($("#salary_medical_allowance").prop("checked")) { 
+        $("#div_ma").show();
+    } else {
+        $("#div_ma").hide();
+        $("#input_medical_allowance").val('0');
+    }
+
+    if($("#salary_special_allowance").prop("checked")) { 
+        $("#div_sa").show();
+    } else {
+        $("#div_sa").hide();
+        $("#input_special_allowance").val('0');
+    }
+
+    if($("#salary_leave_travel_allowance").prop("checked")) { 
+        $("#div_lta").show();
+    } else {
+        $("#div_lta").hide();
+        $("#input_leave_travel_allowance").val('0');
+    }
+
+    if($("#salary_meal_allowance").prop("checked")) { 
+        $("#div_mal").show();
+    } else {
+        $("#div_mal").hide();
+        $("#input_meal_allowance").val('0');
+    }
+
+    if($("#salary_bonus").prop("checked")) { 
+        $("#div_bonus").show();
+    } else {
+        $("#div_bonus").hide();
+        $("#input_bonus").val('0');
+    }
+
+    TotalSalary();
+}
+
+function TotalSalary() {
+    var total_salary = parseInt($("#input_basic_da").val()) + parseInt($("#input_hra").val())  + parseInt($("#input_transportation_allowance").val()) + parseInt($("#input_medical_allowance").val()) + parseInt($("#input_special_allowance").val()) + parseInt($("#input_leave_travel_allowance").val()) + parseInt($("#input_meal_allowance").val())  + parseInt($("#input_bonus").val());
+    
+    $("#input_total_salary").val(total_salary);
 }
