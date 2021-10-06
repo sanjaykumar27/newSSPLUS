@@ -652,8 +652,7 @@
                                                                 <th>Date</th>
                                                                 <th>Loan Number</th>
                                                                 <th>Payment Type</th>
-                                                                <th>Employee Name</th>
-                                                                <th>Emp ID</th>
+                                                                <th>Employee Name / ID</th>
                                                                 <th>Amount</th>
                                                                 <th>Action</th>
                                                             </tr>
@@ -664,8 +663,7 @@
                                                                 <td>01 April Thurs, 2021</td>
                                                                 <td>SSP Loan 01</td>
                                                                 <td>Loan</td>
-                                                                <td>Divesh Kumar</td>
-                                                                <td>SSP01</td>
+                                                                <td>Divesh Kumar (SSP01)</td>
                                                                 <td>+10000</td>
                                                                 <td>
                                                                     <div class="dropdown">
@@ -685,8 +683,7 @@
                                                                 <td>>01 May Thurs, 2021</td>
                                                                 <td>SSP Loan 01</td>
                                                                 <td>Repayment</td>
-                                                                <td>Divesh Kumar</td>
-                                                                <td>SSP01</td>
+                                                                <td>Divesh Kumar (SSP01)</td>
                                                                 <td>-2000</td>
                                                                 <td>
                                                                     <div class="dropdown">
@@ -739,8 +736,7 @@
                                                             <th>S.no</th>
                                                             <th>Date</th>
                                                             <th>Allowance Type</th>
-                                                            <th>Employee Name</th>
-                                                            <th>Emp ID</th>
+                                                            <th>Employee Name / ID</th>
                                                             <th>Total Allowance</th>
                                                             <th>Amount</th>
                                                             <th>Action</th>
@@ -751,8 +747,7 @@
                                                             <td>1</td>
                                                             <td>01 April Thurs, 2021</td>
                                                             <td>Allowance</td>
-                                                            <td>Sanjay Kumar</td>
-                                                            <td>SSP02</td>
+                                                            <td>Sanjay Kumar (SSP02)</td>
                                                             <td>500</td>
                                                             <td>+10000</td>
                                                             <td>
@@ -772,8 +767,7 @@
                                                             <td>2</td>
                                                             <td>01 April Thurs, 2021</td>
                                                             <td>Bonus</td>
-                                                            <td>Divesh Kumar</td>
-                                                            <td>SSP01</td>
+                                                            <td>Divesh Kumar (SSP01)</td>
                                                             <td>1000</td>
                                                             <td>+9000</td>
                                                             <td>
@@ -826,8 +820,7 @@
                                                             <th>S.no</th>
                                                             <th>Date</th>
                                                             <th>Deduction Type</th>
-                                                            <th>Employee Name</th>
-                                                            <th>Emp ID</th>
+                                                            <th>Employee Name / ID</th>
                                                             <th>Amount</th>
                                                             <th>Action</th>
                                                         </tr>
@@ -837,8 +830,7 @@
                                                             <td>1</td>
                                                             <td>01 April Thurs, 2021</td>
                                                             <td>PF</td>
-                                                            <td>Sanjay Kumar</td>
-                                                            <td>SSP02</td>
+                                                            <td>Sanjay Kumar (SSP02)</td>
                                                             <td>1500</td>
                                                             <td>
                                                                 <div class="dropdown">
@@ -857,8 +849,7 @@
                                                             <td>2</td>
                                                             <td>01 May Thurs, 2021</td>
                                                             <td>ESI</td>
-                                                            <td>Divesh Kumar</td>
-                                                            <td>SSP01</td>
+                                                            <td>Divesh Kumar (SSP01)</td>
                                                             <td>1400</td>
                                                             <td>
                                                                 <div class="dropdown">
@@ -1133,7 +1124,7 @@
     </div>
 
     <div class="modal fade" id="modalCreateExpense" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">New Expense</h5>
@@ -1147,7 +1138,7 @@
                                 <input type="date" class="form-control" required>
                             </div>
                             <div class="col-lg-4">
-                                <label class=" fs-5 kt_deductions mb-2 required">Expense Type</label>
+                                <label class=" fs-5 kt_deductions mb-2 required">Transaction Type</label>
                                 <select name="" class="form-select" id="">
                                     <option value="" selected>Select</option>
                                     <option value="">Debit</option>
@@ -1155,11 +1146,20 @@
                                 </select>
                             </div>
                             <div class="col-lg-4">
-                                <label class=" fs-5 kt_deductions mb-2 required">Item</label>
-                                <input type="text" class="form-control" required>
+                                <label class=" fs-5 kt_deductions mb-2 required">Expense Type</label>
+                                <select name="" class="form-select" id="">
+                                    <option value="" selected>Select</option>
+                                    <option value="New" class="text-primary">+ Add Expense Type</option>
+                                    <option value="">Food Expense</option>
+                                    <option value="">Petrol Expense</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <label class=" fs-5 kt_deductions mb-2 required">Item</label>
+                                <input type="text" class="form-control" required>
+                            </div>
                             <div class="col-lg-6">
                                 <label class=" fs-5 kt_deductions mb-2 required">Description</label>
                                 <textarea name="" id="" rows="2" class="form-control"></textarea>
@@ -1176,7 +1176,7 @@
     </div>
 
     <div class="modal fade" id="modalRepayment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Repayment</h5>
@@ -1248,7 +1248,7 @@
     </div>
 
     <div class="modal fade" id="modalPaymentLoan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Advance Payment / Loan</h5>
@@ -1306,7 +1306,7 @@
     </div>
 
     <div class="modal fade" id="modalAllowance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Allowance / Bonus</h5>
@@ -1327,6 +1327,7 @@
                                 <label class=" fs-5  mb-2 required">Allowance Type</label>
                                 <select name="" class="form-select" id="">
                                     <option value="" selected disabled>Select</option>
+                                    <option value="New" class="text-primary">+ Add Allowance Type</option>
                                     <option value="Allowance">Allowance</option>
                                     <option value="Bonus">Bonus</option>
                                 </select>
@@ -1363,7 +1364,7 @@
     </div>
 
     <div class="modal fade" id="modalDeductions" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add Deductions</h5>
@@ -1384,6 +1385,7 @@
                                 <label class=" fs-5  mb-2 required">Deductions Type</label>
                                 <select name="" class="form-select" id="">
                                     <option value="" selected disabled>Select</option>
+                                    <option value="New" class="text-primary">+ Add Deduction Type</option>
                                     <option value="PF">PF</option>
                                     <option value="ESI">ESI</option>
                                     <option value="Others">Others</option>
