@@ -12,10 +12,21 @@ $(function() {
     $("#div_lta").hide();
     $("#div_mal").hide();
     $("#div_bonus").hide();
-    
+    $("#div_lwf").hide();
+    $("#div_pt").hide();
+    $("#div_esi").hide();
+    $("#div_pf").hide();
 
     $("#non-ctc-payroll-setting").hide();
     $("#ctc-payroll-setting").hide();
+
+    $("#contribution_div_pf").hide();
+    $("#contribution_div_esi").hide();
+    $("#contribution_div_basic_da").hide();
+    $("#contribution_div_hra").hide();
+    $("#contribution_div_ma").hide();
+    $("#contribution_div_sa").hide();
+    $("#contribution_div_lta").hide();
 
 	$("#kt_create_access").validate({
         rules: {
@@ -281,11 +292,115 @@ function SalarySetting() {
         $("#input_bonus").val('0');
     }
 
-    TotalSalary();
+    TotalEarning();
 }
 
-function TotalSalary() {
+function TotalEarning() {
     var total_salary = parseInt($("#input_basic_da").val()) + parseInt($("#input_hra").val())  + parseInt($("#input_transportation_allowance").val()) + parseInt($("#input_medical_allowance").val()) + parseInt($("#input_special_allowance").val()) + parseInt($("#input_leave_travel_allowance").val()) + parseInt($("#input_meal_allowance").val())  + parseInt($("#input_bonus").val());
     
-    $("#input_total_salary").val(total_salary);
+    $("#input_total_earning").val(total_salary);
+    $("#input_gross_pay").val(total_salary);
+}
+
+function DeductionSetting()
+{
+    if($("#deduction_pfi").prop("checked")) {
+        $("#div_pf").show();
+    } else {
+        $("#div_pf").hide();
+        $("#input_pf").val('0');
+    }
+
+    if($("#deduction_esi").prop("checked")) {
+        $("#div_esi").show();
+    } else {
+        $("#div_esi").hide();
+        $("#input_esi").val('0');
+    }
+
+    if($("#deduction_pt").prop("checked")) { 
+        $("#div_pt").show();
+    } else {
+        $("#div_pt").hide();
+        $("#input_pt").val('0');
+    }
+
+    if($("#deduction_lfw").prop("checked")) { 
+        $("#div_lwf").show();
+    } else {
+        $("#div_lwf").hide();
+        $("#input_lwf").val('0');
+    }
+    
+}
+
+function TotalDeduction() {
+    var total_deduction = parseInt($("#input_pf").val()) + parseInt($("#input_esi").val())  + parseInt($("#input_pt").val()) + parseInt($("#input_lwf").val());
+    $("#input_total_deduction").val(total_deduction);
+    setTimeout(function(){ 
+        CalculateGrossNet();
+    }, 500);
+}
+
+function CalculateGrossNet() {
+    $("#input_net_pay_in_hand").val(parseInt($("#input_gross_pay").val()) + + parseInt($("#contribution_total").val()) - parseInt($("#input_total_deduction").val()));
+}
+
+function ContributionSetting() {
+    if($("#contribution_pfi").prop("checked")) {
+        $("#contribution_div_pf").show();
+    } else {
+        $("#contribution_div_pf").hide();
+        $("#contribution_input_pf").val('0');
+    }
+
+    if($("#contribution_esi").prop("checked")) {
+        $("#contribution_div_esi").show();
+    } else {
+        $("#contribution_div_esi").hide();
+        $("#contribution_input_esi").val('0');
+    }
+	
+	 if($("#contribution_basic_da").prop("checked")) {
+        $("#contribution_div_basic_da").show();
+    } else {
+        $("#contribution_div_basic_da").hide();
+        $("#contribution_input_basic_da").val('0');
+    }
+
+    if($("#contribution_hra").prop("checked")) {
+        $("#contribution_div_hra").show();
+    } else {
+        $("#contribution_div_hra").hide();
+        $("#contribution_input_hra").val('0');
+    }
+
+    if($("#contribution_medical_allowance").prop("checked")) { 
+        $("#contribution_div_ma").show();
+    } else {
+        $("#contribution_div_ma").hide();
+        $("#contribution_input_medical_allowance").val('0');
+    }
+
+    if($("#contribution_special_allowance").prop("checked")) { 
+        $("#contribution_div_sa").show();
+    } else {
+        $("#contribution_div_sa").hide();
+        $("#contribution_input_special_allowance").val('0');
+    }
+
+    if($("#contribution_leave_travel_allowance").prop("checked")) { 
+        $("#contribution_div_lta").show();
+    } else {
+        $("#contribution_div_lta").hide();
+        $("#contribution_input_leave_travel_allowance").val('0');
+    }
+}
+
+function TotalContribution() {
+    var total_salary = parseInt($("#contribution_input_pf").val()) + parseInt($("#contribution_input_esi").val())  + parseInt($("#contribution_input_basic_da").val()) + parseInt($("#contribution_input_hra").val()) + parseInt($("#contribution_input_medical_allowance").val()) + parseInt($("#contribution_input_special_allowance").val()) + parseInt($("#contribution_input_leave_travel_allowance").val());
+
+    $("#contribution_total").val(total_salary);
+
+    CalculateGrossNet();
 }

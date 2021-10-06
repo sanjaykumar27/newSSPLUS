@@ -903,7 +903,7 @@
                                                         </div>
                                                         <p class="fs-3 fw-bolder text-uppercase border-secondary border-bottom mt-5">Earning</p>
                                                         <div class="bg-light border d-flex mt-4 p-4 rounded-3">
-                                                            <div class="form-check form-check-inline">
+                                                              <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="checkbox" id="salary_basic_da" value="salary_basic_da" onchange="SalarySetting()">
                                                                 <label class="form-check-label" for="salary_basic_da">Basic + DA</label>
                                                               </div>
@@ -939,39 +939,159 @@
                                                         <div class="row mt-4">
                                                             <div class="col-3 mt-4" id="div_basic_da">
                                                                 <label for="">Basic + DA</label>
-                                                                <input type="number" class="form-control" id="input_basic_da" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_basic_da" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_hra">
                                                                 <label for="">HRA</label>
-                                                                <input type="number" class="form-control" id="input_hra" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_hra" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_ta">
                                                                 <label for="">Transportation Allowance</label>
-                                                                <input type="number" class="form-control" id="input_transportation_allowance" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_transportation_allowance" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_ma">
                                                                 <label for="">Medical Allowance</label>
-                                                                <input type="number" class="form-control" id="input_medical_allowance" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_medical_allowance" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_sa">
                                                                 <label for="">Special Allowance</label>
-                                                                <input type="number" class="form-control" id="input_special_allowance" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_special_allowance" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_lta"> 
                                                                 <label for="">Leave Travel Allowance</label>
-                                                                <input type="number" class="form-control" id="input_leave_travel_allowance" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_leave_travel_allowance" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_mal">
                                                                 <label for="">Meal Allowance</label>
-                                                                <input type="number" class="form-control" id="input_meal_allowance" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_meal_allowance" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_bonus">
                                                                 <label for="">Bonus</label>
-                                                                <input type="number" class="form-control" id="input_bonus" onchange="TotalSalary()">
+                                                                <input type="number" class="form-control" id="input_bonus" onchange="TotalEarning()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="div_total_salary">
-                                                                <label for="">Total Salary</label>
-                                                                <input type="number" class="form-control" id="input_total_salary" onchange="TotalSalary()">
+                                                                <label for="">Total Earning</label>
+                                                                <input type="number" class="form-control" id="input_total_earning" onchange="TotalEarning()">
+                                                            </div>
+                                                        </div>
+
+                                                        <p class="fs-3 fw-bolder text-uppercase border-secondary border-bottom mt-5">Deductions</p>
+                                                        <div class="bg-light border d-flex mt-4 p-4 rounded-3">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="deduction_pfi" value="deduction_pfi" onchange="DeductionSetting()">
+                                                                <label class="form-check-label" for="deduction_pfi">Provident Fund (PF)</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="deduction_esi" value="deduction_esi" onchange="DeductionSetting()">
+                                                                <label class="form-check-label" for="deduction_esi">Employee State Insurance (ESI)</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="deduction_pt" value="deduction_pt" onchange="DeductionSetting()">
+                                                                <label class="form-check-label" for="deduction_pt">Professional Tax</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="deduction_lfw" value="deduction_lfw" onchange="DeductionSetting()">
+                                                                <label class="form-check-label" for="deduction_lfw">Labour Welfare Fund (LWF)</label>
+                                                              </div>
+                                                        </div>
+                                                        <div class="row mt-4">
+                                                            <div class="col-3 mt-4" id="div_pf">
+                                                                <label for="">Provident Fund (PF)</label>
+                                                                <input type="number" class="form-control" id="input_pf" onchange="TotalDeduction()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_esi">
+                                                                <label for="">Employee State Insurance (ESI)</label>
+                                                                <input type="number" class="form-control" id="input_esi" onchange="TotalDeduction()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_pt">
+                                                                <label for="">Professional Tax</label>
+                                                                <input type="number" class="form-control" id="input_pt" onchange="TotalDeduction()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_lwf">
+                                                                <label for="">Labour Welfare Fund (LWF)</label>
+                                                                <input type="number" class="form-control" id="input_lwf" onchange="TotalDeduction()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_total_salary">
+                                                                <label for="">Total Deduction</label>
+                                                                <input type="number" class="form-control" id="input_total_deduction" onchange="TotalDeduction()">
+                                                            </div>
+                                                        </div>
+
+                                                        <p class="fs-3 fw-bolder text-uppercase border-secondary border-bottom mt-5">Employee Contribution</p>
+                                                        <div class="bg-light border d-flex mt-4 p-4 rounded-3">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="contribution_basic_da" value="contribution_basic_da" onchange="ContributionSetting()">
+                                                                <label class="form-check-label" for="contribution_basic_da">Basic + DA</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="contribution_hra" value="contribution_hra" onchange="ContributionSetting()">
+                                                                <label class="form-check-label" for="contribution_hra">HRA</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="contribution_medical_allowance" value="contribution_medical_allowance" onchange="ContributionSetting()">
+                                                                <label class="form-check-label" for="contribution_medical_allowance">Medical Allowance</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="contribution_special_allowance" value="contribution_special_allowance" onchange="ContributionSetting()">
+                                                                <label class="form-check-label" for="contribution_special_allowance">Special Allowance</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="contribution_leave_travel_allowance" value="contribution_leave_travel_allowance" onchange="ContributionSetting()">
+                                                                <label class="form-check-label" for="contribution_leave_travel_allowance">Leave Travel Allowance</label>
+                                                              </div>
+															  <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="contribution_pfi" value="contribution_pfi" onchange="ContributionSetting()">
+                                                                <label class="form-check-label" for="contribution_pfi">Provident Fund (PF)</label>
+                                                              </div>
+                                                              <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox" id="contribution_esi" value="contribution_esi" onchange="ContributionSetting()">
+                                                                <label class="form-check-label" for="contribution_esi">Employee State Insurance (ESI)</label>
+                                                              </div>
+                                                        </div>
+                                                        <div class="row mt-4">
+                                                            <div class="col-3 mt-4" id="contribution_div_basic_da">
+                                                                <label for="">Basic + DA</label>
+                                                                <input type="number" class="form-control" id="contribution_input_basic_da" onchange="TotalContribution()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="contribution_div_hra">
+                                                                <label for="">HRA</label>
+                                                                <input type="number" class="form-control" id="contribution_input_hra" onchange="TotalContribution()">
+                                                            </div>
+                                                           
+                                                            <div class="col-3 mt-4" id="contribution_div_ma">
+                                                                <label for="">Medical Allowance</label>
+                                                                <input type="number" class="form-control" id="contribution_input_medical_allowance" onchange="TotalContribution()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="contribution_div_sa">
+                                                                <label for="">Special Allowance</label>
+                                                                <input type="number" class="form-control" id="contribution_input_special_allowance" onchange="TotalContribution()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="contribution_div_lta"> 
+                                                                <label for="">Leave Travel Allowance</label>
+                                                                <input type="number" class="form-control" id="contribution_input_leave_travel_allowance" onchange="TotalContribution()">
+                                                            </div>
+															<div class="col-3 mt-4" id="contribution_div_pf">
+                                                                <label for="">Provident Fund (PF)</label>
+                                                                <input type="number" class="form-control" id="contribution_input_pf" onchange="TotalContribution()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="contribution_div_esi">
+                                                                <label for="">Employee State Insurance (ESI)</label>
+                                                                <input type="number" class="form-control" id="contribution_input_esi" onchange="TotalContribution()">
+                                                            </div>
+                                                            <div class="col-3 mt-4" >
+                                                                <label for="">Total Contribution</label>
+                                                                <input type="number" class="form-control" id="contribution_total" onchange="TotalContribution()">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mt-4 pb-3 px-2 mx-0 bg-light rounded-3">
+                                                            <div class="col-3 mt-4" id="div_pf">
+                                                                <label for="">Gross Pay</label>
+                                                                <input type="number" class="form-control" id="input_gross_pay" onchange="CalculateGrossNet()" readonly>
+                                                            </div>
+                                                            <div class="col-3 mt-4" id="div_pf">
+                                                                <label for="">Net Pay in Hand</label>
+                                                                <input type="number" class="form-control" id="input_net_pay_in_hand" onchange="CalculateGrossNet()" readonly>
                                                             </div>
                                                         </div>
                                                     </div>
