@@ -550,7 +550,7 @@
                                                             <input type="text" id="orgLocation" required name="orgLocation" class="form-control">
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <label class=" fs-6 fw-bold mb-2 required">Address</label>
+                                                            <label class=" fs-6 fw-bold mb-2">Address</label>
                                                             <textarea type="text" id="orgAddress" required name="orgAddress" class="form-control" rows="2"></textarea>
                                                         </div>
                                                     </div>
@@ -563,63 +563,31 @@
                                             </form>
                                         </div>
                                         <div class="tab-pane fade" id="kt_branch_setting" role="tabpanel">
-                                            <div class="d-flex justify-content-end">
+                                            <div class="d-flex justify-content-end mb-3">
                                                 <div class="col-auto ">
                                                     <!-- <button class="btn btn-secondary btn-sm" type="button " id="add-branch" style="display: none;"><i class="fas fa-plus"></i> Add More Branch</button> -->
-                                                    <button class="btn btn-primary btn-sm" type="button " id="add-branch-static" onclick="showDiv('add-more-branch');showDiv('add-branch');hideDiv('add-branch-static');hideDiv('branch-list');"><i class="fas fa-plus "></i>Create Branch</button>
+                                                    <button class="btn btn-primary btn-sm" type="button " id="add-branch-static"  data-bs-toggle="modal" data-bs-target="#modalbranchSettings"><i class="fas fa-plus "></i>Create Branch</button>
+                                                    <!-- onclick="showDiv('add-more-branch');showDiv('add-branch');hideDiv('add-branch-static');hideDiv('branch-list');" -->
                                                 </div>
                                             </div>
-                                            <form method="post" class="form w-100" id="kt_create_branch">
-                                                <div class="w-100 mt-5" style="min-height:280px">
-                                                    <div class="table-responsive" id="branch-list">
-                                                        <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
-                                                            <thead class="bg-light-primary">
-                                                                <tr class="text-start fw-bolder fs-7 text-uppercase gs-0">
-                                                                    <th></th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Branch Name</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Branch Head</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Reporting Manager</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Branch Address</th>
-                                                                    <th class="fw-boldest text-gray-700 text-uppercase">Action</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="branch-list-table">
+                                            <div class="table-responsive" id="branch-list">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                    <thead class="bg-light-primary">
+                                                        <tr class="text-start fw-bolder fs-7 text-uppercase gs-0">
+                                                            <th></th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Branch Name</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Branch Head</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Reporting Manager</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Branch Address</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="branch-list-table">
 
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div id="add-more-branch" style="display: none;">
-                                                        <span class="fs-3 fw-bolder mb-5">Branch #1</span>
-                                                        <div class="row mt-4">
-                                                            <div class="col-4">
-                                                                <input type="hidden" id="branch_id">
-                                                                <label class=" fs-6 fw-bold mb-2 required">Branch Name</label>
-                                                                <input type="text" id="branchName" required name="branchName" class="form-control">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <label class=" fs-6 fw-bold mb-2 required">Branch Head</label>
-                                                                <input type="text" id="branchHead" required name="branchHead" class="form-control">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <label class=" fs-6 fw-bold mb-2 required">Reporting Manager</label>
-                                                                <input type="text" id="manager" required name="manager" class=" form-control ">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mt-5 ">
-                                                            <div class="col-6 ">
-                                                                <label class="fs-5 fw-bold mb-2 required ">Branch Address</label>
-                                                                <textarea type="text " id="address" class="form-control" required name="address" rows="2 "></textarea>
-                                                            </div>
-                                                        </div>
-														 <div class="d-flex justify-content-end pt-15">
-															<a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_branch_setting', 'kt_general_setting') "><i class="fas fa-arrow-left "></i> Back</a>
-															<button id="create-branch-submit" class="btn btn-primary btn-sm " type="submit " onclick=" ">Save & Continue <i class="fas fa-arrow-right "></i><span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-branch-spinner"></span></button>
-														</div>
-                                                    </div>
-                                                </div>
-											</form>
-                                            
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                         <div class="tab-pane fade " id="kt_department_setting" role="tabpanel ">
                                             <div class="d-flex justify-content-end">
@@ -627,11 +595,11 @@
                                                     <!-- <button class="btn btn-secondary btn-sm " type="button " id="add-department" style="display: none;"><i class="fas fa-plus "></i> 
                                                         Add More Department
                                                    </button> -->
-                                                    <button class="btn btn-primary btn-sm " type="button " id="add-department-static" onclick="showDiv( 'add-more-department');showDiv('add-department');hideDiv('add-department-static');hideDiv(
-                                                                    'department-list'); "><i class="fas fa-plus "></i> Create Department</button>
+                                                    <button class="btn btn-primary btn-sm " type="button " id="add-department-static" data-bs-toggle="modal" data-bs-target="#modalDepartmentSettings"><i class="fas fa-plus "></i> Create Department</button>
+                                                    <!-- onclick="showDiv( 'add-more-department');showDiv('add-department');hideDiv('add-department-static');hideDiv('department-list'); " -->
                                                 </div>
                                             </div>
-                                            <div class="table-responsive mt-5 " id="department-list" style="min-height:280px; ">
+                                            <div class="table-responsive mt-3 " id="department-list" style="min-height:280px; ">
                                                 <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer ">
                                                     <thead class="bg-light-primary ">
                                                         <tr class="text-start fw-bolder fs-7 text-uppercase gs-0 ">
@@ -645,34 +613,17 @@
                                                     <tbody id="department-list-table"></tbody>
                                                 </table>
                                             </div>
-                                            <div class="w-100 mt-5 " id="add-more-department" style="display:none ">
-												<form method="post" class="form w-100" id="kt_create_department">
-													<div id="add-more-department" style="min-height:280px;">
-														<div class="row mt-4 ">
-															<div class="col-4 ">
-																<label class=" fs-6 fw-bold mb-2 required ">Department Head</label>
-																<input type="text" class="form-control" name="deptName" id="deptName">
-																<input type="hidden" id="dept_id">
-																<input type="hidden" id="organizationId">
-															</div>
-															<div class="col-4 ">
-																<label class=" fs-6 fw-bold mb-2 required ">Department Head Employee</label>
-																<input type="text" class="form-control" name="deptHead" id="deptHead">
-															</div>
-														</div>
-													</div>
-													<div class="d-flex justify-content-end pt-15">
-														<a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_department_setting', 'kt_branch_setting') "><i class="fas fa-arrow-left "></i> Back</a>
-														<button class="btn btn-primary btn-sm" id="create-department-submit">Save & Continue <span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-department-spinner"></span><i class="fas fa-arrow-right "></i></button>
-													</div>
-												</form>
-                                            </div>
+                                            
 
                                             
                                         </div>
                                         <div class="tab-pane fade " id="kt_designation_setting" role="tabpanel ">
-                                            
-                                            <div class="table-responsive mt-5 " id="designation-list" style="min-height:280px;display: none; ">
+                                            <div class="d-flex justify-content-end">
+                                                <div class="col-auto ">
+                                                    <button class="btn btn-primary btn-sm " type="button " id="add-department-static" data-bs-toggle="modal" data-bs-target="#modalDesignationSettings"><i class="fas fa-plus "></i> Create Designation</button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive mt-3 " id="designation-list" style="min-height:280px;">
                                                 <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer ">
                                                     <thead class="bg-light-primary ">
                                                         <tr class="text-start fw-bolder fs-7 text-uppercase gs-0 ">
@@ -685,30 +636,7 @@
                                                     <tbody id="designation-list-table"></tbody>
                                                 </table>
                                             </div>
-											<form method="post" class="form w-100" id="kt_create_department">
-                                            <div class="w-100 " id="add-more-designation" style="min-height:280px " style="display: none; ">
-                                                <div class="row mt-4 ">
-                                                    <div class="col-6 ">
-                                                        <label class=" fs-6 fw-bold mb-2 required ">Designation</label>
-                                                        <input type="number " class="form-control ">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="d-flex justify-content-between pt-15 ">
-                                                <div class="col-auto ">
-                                                    <!--<button class="btn btn-secondary btn-sm " type="button" id="add-designation" style="display: none;"><img src="assets/media/icons/duotone/Code/Plus.svg "/>
-													 Add More Designation</button> -->
-                                                    <button class="btn btn-secondary btn-sm " type="button " id="add-designation-static" onclick="showDiv( 'add-more-designation');showDiv( 'add-designation');hideDiv( 'add-designation-static');hideDiv(
-                                                                    'designation-list'); "><img src="assets/media/icons/duotone/Code/Plus.svg "/>
-                                                    Create Designation</button>
-                                                </div>
-                                                <div>
-                                                    <button class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_designation_setting', 'kt_department_setting') "><i class="fas fa-arrow-left "></i> Back</button>
-                                                    <button class="btn btn-primary btn-sm " onclick="ActivateTab( 'kt_designation_setting', 'kt_locale_setting') ">Save & Continue <i class="fas fa-arrow-right "></i></button>
-                                                </div>
-                                            </div>
-											</form>
+											
                                         </div>
                                         <div class="tab-pane fade " id="kt_locale_setting" role="tabpanel">
 											<form method="post" class="form w-100" id="kt_create_settings">
@@ -716,15 +644,15 @@
 													<div class="row mt-4 ">
 														<div class="col-4 ">
 															<label class="fs-5 fw-bold mb-2 required ">Current Locale</label>
-															<select name="locale" class="form-select " id="locale">
-																<option value="India " selected>India</option>
+															<select name="locale" class="form-select form-select-solid" data-control="select2" data-allow-clear="true" data-placeholder="Select locale" data-allow-clear="true" id="locale">
+																<option value="India" selected>India</option>
 																<option value="US " selected>US</option>
 																<option value="UK " selected>UK</option>
 															</select>
 														</div>
 														<div class="col-4 ">
 															<label class=" fs-6 fw-bold mb-2 required ">Date Format</label>
-															<select name="dateFormat" class="form-select " id="dateFormat">
+															<select name="dateFormat" class="form-select form-select-solid" data-control="select2" data-allow-clear="true" data-placeholder="Select date format" data-allow-clear="true" id="dateFormat">
 																<option value="dd/mmm/yyyy" selected>dd/mmm/yyyy</option>
 																<option value="dd/mm/yyyy" selected>dd/mm/yyyy</option>
 																<option value="yyyy/mm/dd" selected>yyyy/mm/dd</option>
@@ -732,7 +660,7 @@
 														</div>
 														<div class="col-4 ">
 															<label class=" fs-6 fw-bold mb-2 required ">Time Format</label>
-															<select name="timeFormat" class="form-select " id="timeFormat">
+															<select name="timeFormat" class="form-select form-select-solid" data-control="select2" data-allow-clear="true" data-placeholder="Select time format" data-allow-clear="true" id="timeFormat">
 																<option value="24 Hours" selected>24 Hours</option>
 																<option value="12 Hours">12 Hours</option>
 															</select>
@@ -749,7 +677,7 @@
 														</div>
 														<div class="col-4 ">
 															<label class=" fs-6 fw-bold mb-2 required ">Default Organization</label>
-															<select name="organizationId" class="form-select " id="organizationId">
+															<select name="organizationId" class="form-select form-select-solid" data-control="select2" data-allow-clear="true" data-placeholder="Select default organization" data-allow-clear="true" id="organizationId">
 																<option value=" ">Org 1</option>
 																<option value=" ">Org 2</option>
 															</select>
@@ -997,6 +925,148 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                     <button type="button" class="btn btn-danger" onclick="DeleteDepartment()" data-bs-dismiss="modal">Yes, Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDesignationSettings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Designation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" class="form w-100 d-none" id="kt_create_department"> 
+                        <div class="w-100 " id="add-more-designation">
+                            <div class="row mt-4 ">
+                                <div class="col-6 ">
+                                    <label class=" fs-6 fw-bold mb-2 required ">Designation</label>
+                                    <input type="number " class="form-control ">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="d-flex justify-content-between pt-15 ">
+                            <div class="col-auto ">
+                                <button class="btn btn-secondary btn-sm " type="button" id="add-designation" style="display: none;"><img src="assets/media/icons/duotone/Code/Plus.svg "/>
+                                 Add More Designation</button>
+                                <button class="btn btn-secondary btn-sm " type="button " id="add-designation-static" data-bs-toggle="modal" data-bs-target="#modalDesignationSettings"><img src="assets/media/icons/duotone/Code/Plus.svg "/>Create Designation</button> 
+                                onclick="showDiv( 'add-more-designation');showDiv( 'add-designation');hideDiv( 'add-designation-static');hideDiv('designation-list'); " 
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_designation_setting', 'kt_department_setting') "><i class="fas fa-arrow-left "></i> Back</button>
+                                <button class="btn btn-primary btn-sm " onclick="ActivateTab( 'kt_designation_setting', 'kt_locale_setting') ">Save & Continue <i class="fas fa-arrow-right "></i></button>
+                            </div>
+                        </div> -->
+                        </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalbranchSettings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Branch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" class="form w-100" id="kt_create_branch">
+                        <div id="add-more-branch">
+                            <span class="fs-3 fw-bolder mb-5">Branch #1</span>
+                            <div class="row mt-4">
+                                <div class="col-4">
+                                    <input type="hidden" id="branch_id">
+                                    <label class=" fs-6 fw-bold mb-2 required">Branch Name</label>
+                                    <input type="text" id="branchName" required name="branchName" class="form-control">
+                                </div>
+                                <div class="col-4">
+                                    <label class=" fs-6 fw-bold mb-2 required">Branch Head</label>
+                                    <select name="branchHead" id="branchHead" class="form-select form-select-solid" data-control="select2" data-placeholder="Select branch head" data-allow-clear="true" id="">
+                                        <option value="" selected>Select Branch Head</option>
+                                        <option value="1">Sanjay</option>
+                                        <option value="2">Ravi</option>
+                                    </select>
+                                    <!-- <input type="text" id="branchHead" required name="branchHead" class="form-control"> -->
+                                </div>
+                                <div class="col-4">
+                                    <label class=" fs-6 fw-bold mb-2 required">Reporting Manager</label>
+                                    <!-- <input type="text" id="manager" required name="manager" class=" form-control "> -->
+                                    <select name="manager" id="manager" class="form-select form-select-solid" data-control="select2" data-placeholder="Select reporting manager" data-allow-clear="true" id="">
+                                        <option value="" selected>Select reporting head</option>
+                                        <option value="1">Sanjay</option>
+                                        <option value="2">Ravi</option>
+                                    </select>
+                                </div>  
+                            </div>
+                            <div class="row mt-5 ">
+                                <div class="col-6 ">
+                                    <label class="fs-5 fw-bold mb-2 required ">Branch Address</label>
+                                    <textarea type="text " id="address" class="form-control" required name="address" rows="2 "></textarea>
+                                </div>
+                            </div>
+                             <!-- <div class="d-flex justify-content-end pt-15">
+                                <a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_branch_setting', 'kt_general_setting') "><i class="fas fa-arrow-left "></i> Back</a>
+                                <button id="create-branch-submit" class="btn btn-primary btn-sm " type="submit " onclick=" ">Save & Continue <i class="fas fa-arrow-right "></i><span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-branch-spinner"></span></button>
+                            </div> -->
+                        </div>
+                </form>
+                
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDepartmentSettings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Department</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="w-100 mt-5"id="add-more-department">
+                        <form method="post" class="form w-100" id="kt_create_department">
+                            <div id="add-more-department">
+                                <div class="row mt-4 ">
+                                    <div class="col-4 ">
+                                        <label class=" fs-6 fw-bold mb-2 required ">Department Name</label>
+                                        <input type="text" class="form-control" name="deptName" id="deptName">
+                                        <input type="hidden" id="dept_id">
+                                        <input type="hidden" id="organizationId">
+                                    </div>
+                                    <div class="col-4 ">
+                                        <label class=" fs-6 fw-bold mb-2 required ">Department Head</label>
+                                        <!-- <input type="text" class="form-control" name="deptHead" id="deptHead"> -->
+                                        <select name="deptHead" id="deptHead" class="form-select form-select-solid" data-control="select2" data-placeholder="Select department head" data-allow-clear="true" id="">
+                                            <option value="" selected>Select department head</option>
+                                            <option value="1">Sanjay</option>
+                                            <option value="2">Ravi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="d-flex justify-content-end pt-15">
+                                <a href="javascript:void(0)" class="btn btn-sm btn-secondary me-3 " onclick="ActivateTab( 'kt_department_setting', 'kt_branch_setting') "><i class="fas fa-arrow-left "></i> Back</a>
+                                <button class="btn btn-primary btn-sm" id="create-department-submit">Save & Continue <span class="spinner-border spinner-border-sm align-middle ms-2" style="display: none; " id="create-department-spinner"></span><i class="fas fa-arrow-right "></i></button>
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
                 </div>
             </div>
         </div>
