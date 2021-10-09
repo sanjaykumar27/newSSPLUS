@@ -1130,7 +1130,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">New Expense</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="bg-light modal-body">
                     <form action="">
                         <div class="row mb-3">
                             <div class="col-lg-4">
@@ -1147,7 +1147,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <label class=" fs-5 kt_deductions mb-2 required">Expense Type</label>
-                                <select name="" class="form-select" id="">
+                                <select name="" class="form-select" id="expense_type" onchange="AddNewItem('expense_type',this.value)">
                                     <option value="" selected>Select</option>
                                     <option value="New" class="text-primary">+ Add Expense Type</option>
                                     <option value="">Food Expense</option>
@@ -1156,7 +1156,11 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-lg-4">
+                            <div class="col-lg-3" id="new_expense_type">
+                                <label class=" fs-5 kt_deductions mb-2 required">New Expense Type</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-lg-3">
                                 <label class=" fs-5 kt_deductions mb-2 required">Item</label>
                                 <input type="text" class="form-control" required>
                             </div>
@@ -1182,7 +1186,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Add Repayment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="bg-light modal-body">
                     <form action="">
                         <div class="row mb-3">
                             <div class="col-lg-4">
@@ -1254,7 +1258,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Advance Payment / Loan</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="bg-light modal-body">
                     <form action="">
                         <div class="row mb-3">
                             <div class="col-lg-4">
@@ -1312,7 +1316,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Add Allowance / Bonus</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="bg-light modal-body">
                     <form action="">
                         <div class="row mb-3">
                             <div class="col-lg-4">
@@ -1325,7 +1329,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <label class=" fs-5  mb-2 required">Allowance Type</label>
-                                <select name="" class="form-select" id="">
+                                <select name="" class="form-select" id="allowance_type" onchange="AddNewItem('allowance_type',this.value)">
                                     <option value="" selected disabled>Select</option>
                                     <option value="New" class="text-primary">+ Add Allowance Type</option>
                                     <option value="Allowance">Allowance</option>
@@ -1348,6 +1352,10 @@
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <div class="col-lg-4" id="new_allowane_type">
+                                <label class=" fs-5  mb-2 required">New Allowance Type</label>
+                                <input type="text" class="form-control"  required>
+                            </div>
                             <div class="col-lg-6">
                                 <label class=" fs-5  mb-2 required">Description</label>
                                 <textarea name="" id="" rows="2" class="form-control"></textarea>
@@ -1370,7 +1378,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Add Deductions</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="bg-light modal-body">
                     <form action="">
                         <div class="row mb-3">
                             <div class="col-lg-4">
@@ -1383,7 +1391,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <label class=" fs-5  mb-2 required">Deductions Type</label>
-                                <select name="" class="form-select" id="">
+                                <select name="" class="form-select" id="deduction_type" onchange="AddNewItem('deduction_type',this.value)">
                                     <option value="" selected disabled>Select</option>
                                     <option value="New" class="text-primary">+ Add Deduction Type</option>
                                     <option value="PF">PF</option>
@@ -1393,6 +1401,10 @@
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <div class="col-lg-4" id="new_deduction_type">
+                                <label class=" fs-5  mb-2 required">New Deduction Type</label>
+                                <input type="text" class="form-control">
+                            </div>
                             <div class="col-lg-4">
                                 <label class=" fs-5  mb-2 required">Amount</label>
                                 <input type="number" class="form-control" required>
@@ -1425,6 +1437,7 @@
     <script src="assets/js/custom/modals/create-app.js"></script>
     <script src="assets/js/custom/modals/upgrade-plan.js"></script>
     <script src="assets/js/custom-js/common.js"></script>
+    <script src="assets/js/custom-js/payroll/payroll.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>
 </body>
