@@ -484,7 +484,7 @@
                     <div class="toolbar" id="kt_toolbar">
                         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
                             <div data-kt-place="true" data-kt-place-mode="prepend" data-kt-place-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1">
-                                <h1 class="d-flex align-items-center my-1 fs-4">Organization </h1>
+                                <h1 class="d-flex align-items-center my-1 fs-4">Employee List </h1>
                             </div>
                         </div>
                     </div>
@@ -494,52 +494,226 @@
                         <!--begin::Main Container content container-->
                         <div id="kt_content_container" class="container-fluid px-5">
                             <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="card-title">
-                                        <div class="d-flex align-items-center position-relative my-1">
-                                            <input type="text" id="org-list-search" onkeyup="searchOrg(this.value)" data-kt-customer-table-filter="search" class="form-control form-control-solid w-550px" placeholder="Search Organization">
+                                <div class="card-body">
+                                    <ul class="nav nav-pills mb-3 border border-2 rounded-pill p-2">
+                                        <li class="nav-item ">
+                                            <a class="nav-link fs-5 fw-bolder rounded-pill active" data-bs-toggle="tab" href="#kt_daily_attendance" id="kt_daily_attendance_title">Daily Attendance</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link fs-5 fw-bolder rounded-pill" data-bs-toggle="tab" href="#kt_monthly_attendace" id="kt_monthly_attendace_title">Monthly</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link fs-5 fw-bolder rounded-pill" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_paid_unpaid_leave" id="kt_paid_unpaid_leave_title">Paid / Unpaid Leave</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link fs-5 fw-bolder rounded-pill" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_over_time_monthly" id="kt_over_time_monthly_title">Over Time Monthly</a>
+                                        </li>
+										<li class="nav-item">
+                                            <a class="nav-link fs-5 fw-bolder rounded-pill" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_shift_based" id="kt_shift_based_title">Shift Based Attendance</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content" id="tabCreateOrganization">
+                                        <div class="tab-pane fade show active" id="kt_daily_attendance" role="tabpanel">
+                                            <div class="card-header ps-0 d-flex justify-content-between border-0">
+                                                <div class="card-title">
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <input type="text" data-kt-customer-table-filter="search" class="w-500px form-control form-control-solid w-250px ps-15" placeholder="Search Employee">
+                                                    </div>
+                                                </div>
+                                                <div class="card-toolbar">
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table align-middle table-borderd table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                    <thead class="bg-light-primary">
+                                                        <tr>
+                                                            <th>S.No</th>
+                                                            <th>Name</th>
+                                                            <th>Emp ID</th>
+                                                            <th>First In</th>
+                                                            <th>Last Out</th>
+                                                            <th>Total In Wipes</th>
+                                                            <th>Total Out Wipes</th>
+                                                            <th>Shift</th>
+                                                            <th>Total Working Hours</th>
+                                                            <th>Total Outside Hours</th>
+                                                            <th>Overtime</th>
+                                                            <th>Status</th>
+                                                            <th>Action Time</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Siva S</td>
+                                                            <td>SSP01</td>
+                                                            <td>10:10 AM</td>
+                                                            <td>18:10 PM</td>
+                                                            <td>10:00, 10:30</td>
+                                                            <td>11:04, 12:30</td>
+                                                            <td>G</td>
+                                                            <td>7</td>
+                                                            <td></td>
+                                                            <td>0</td>
+                                                            <td>p</td>
+                                                            <td></td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <i class="fas fa-ellipsis-v"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                        <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-toolbar">
-                                        <a href="create_organization.html" class="btn btn-primary ">
-                                            <span class="svg-icon svg-icon-2"> </span> Create Organization</a>
-                                        <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
-                                        </button>
-                                        <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
-                                            <i class="fas fa-download"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="table-responsive">
-                                        <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
-                                            <thead class="bg-light-primary">
-                                                <tr class="fw-bold">
-                                                    <th></th>
-                                                    <th>S.no</th>
-                                                    <th>Organization Name</th>
-                                                    <th>Email ID</th>
-                                                    <th>Contact Number</th>
-                                                    <td>Default Organization</td>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="org-list-table">
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center" id="org-pagination">
-                                        <ul class="pagination" id="org-list-pagination">
-
-                                        </ul>
-                                        <select class="form-select ms-5 w-125px" onchange="getOrgList('',0,this.value)">
-                                            <option value="5" selected>5</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="20">20</option>
-                                        </select>
-                                        <span class="ms-5 fw-bolder">Records</span>
+                                        <div class="tab-pane fade" id="kt_monthly_attendace" role="tabpanel">
+                                            <div class="card-header pb-2 ps-0 d-flex justify-content-between border-0 align-items-end">
+                                                <div class="card-title">
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <div class="me-5">
+                                                            <label for="">Start Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-01" id="current-start-date">
+                                                        </div>
+                                                        <div>
+                                                            <label for="">End Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-30" id="current-end-date">
+                                                        </div>
+                                                        <div class="ms-5">
+                                                            <label for=""></label>
+                                                            <input type="text" data-kt-customer-table-filter="search" class="w-500px form-control form-control-solid w-250px ps-15" placeholder="Search Employee">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-toolbar">
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive" id="attendance-html"></div>
+                                        </div>
+                                        <div class="tab-pane fade " id="kt_paid_unpaid_leave" role="tabpanel ">
+                                            <div class="card-header pb-2 ps-0 d-flex justify-content-between border-0 align-items-end">
+                                                <div class="card-title">
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <div class="me-5">
+                                                            <label for="">Start Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-01">
+                                                        </div>
+                                                        <div>
+                                                            <label for="">End Date</label>
+                                                            <input type="date" class="form-control" value="2021-09-30">
+                                                        </div>
+                                                        <div class="ms-5">
+                                                            <label for=""></label>
+                                                            <input type="text" data-kt-customer-table-filter="search" class="w-500px form-control form-control-solid w-250px ps-15" placeholder="Search Employee">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-toolbar">
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table align-middle table-borderd table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                    <thead class="bg-light-primary">
+                                                        <tr>
+                                                            <th>S.No</th>
+                                                            <th>Employee Name</th>
+                                                            <th>Total Absent</th>
+                                                            <th>Total Paid Leave</th>
+                                                            <th>Total Unpaid Leave</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Sanjay Kumar</td>
+                                                            <td>5</td>
+                                                            <td>28</td>
+                                                            <td>10</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade " id="kt_over_time_monthly" role="tabpanel ">
+                                            <div class="card-header ps-0 d-flex justify-content-between border-0">
+                                                <div class="card-title">
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <div class="me-5">
+                                                            <label for="">Start Date</label>
+                                                            <input type="date" onchange="CalculateDateDiffOvertime()" class="form-control" value="2021-09-01" id="overtime-start-date">
+                                                        </div>
+                                                        <div>
+                                                            <label for="">End Date</label>
+                                                            <input type="date" onchange="CalculateDateDiffOvertime()" class="form-control" value="2021-09-30" id="overtime-end-date">
+                                                        </div>
+                                                        <div class="ms-5">
+                                                            <label for=""></label>
+                                                            <input type="text" data-kt-customer-table-filter="search" class="w-500px form-control form-control-solid w-250px ps-15" placeholder="Search Employee">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-toolbar">
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive" id="overtime-html-attendance"></div>
+                                        </div>
+										<div class="tab-pane fade " id="kt_shift_based" role="tabpanel ">
+                                            <div class="card-header ps-0 d-flex justify-content-between border-0">
+                                                <div class="card-title">
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <div class="me-5">
+                                                            <label for="">Start Date</label>
+                                                            <input type="date" onchange="CalculateDateDiffShift()" class="form-control" value="2021-09-01" id="shift-start-date">
+                                                        </div>
+                                                        <div>
+                                                            <label for="">End Date</label>
+                                                            <input type="date" onchange="CalculateDateDiffShift()" class="form-control" value="2021-09-30" id="shift-end-date">
+                                                        </div>
+                                                        <div class="ms-5">
+                                                            <label for=""></label>
+                                                            <input type="text" data-kt-customer-table-filter="search" class="w-500px form-control form-control-solid w-250px ps-15" placeholder="Search Employee">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-toolbar">
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                                    </button>
+                                                    <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive" id="shift-html-attendance"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -743,39 +917,20 @@
         <!--end::Svg Icon-->
     </div>
     
-    <div class="modal fade" id="modalDeleteOrganizationBranch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalDeleteEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Branch</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Employee</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" id="delete-modal-branch-id">
-                    <p class="fs-3">Are you sure, you want to delete <span id="modal-branch-name" class="badge badge-light-dark"></span> ??</p>
+                    <input type="hidden" id="delete-modal-emp-id">
+                    <p class="fs-3">Are you sure, you want to delete <span id="modal-emp-name" class="badge badge-light-dark"></span> ??</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="DeleteBranch()" data-bs-dismiss="modal">Yes, Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-	
-	<div class="modal fade" id="modalDeleteOrganizationDepartment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Department</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" id="delete-modal-dept-id">
-                    <p class="fs-3">Are you sure, you want to delete <span id="modal-dept-name" class="badge badge-light-dark"></span> ??</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="DeleteDepartment()" data-bs-dismiss="modal">Yes, Delete</button>
+                    <button type="button" class="btn btn-danger" onclick="DeleteEmp()" data-bs-dismiss="modal">Yes, Delete</button>
                 </div>
             </div>
         </div>
@@ -787,12 +942,8 @@
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/modals/create-app.js"></script>
     <script src="assets/js/custom/modals/upgrade-plan.js"></script>
-    <script src="assets/js/custom-js/organization/create-organization.js"></script>
-    <script src="assets/js/custom-js/organization/organization-list.js"></script>
-    <script src="assets/js/custom-js/branch/create-branch.js"></script>
-    <script src="assets/js/custom-js/add-department.js"></script>
-    <script src="assets/js/custom-js/add-designation.js"></script>
     <script src="assets/js/custom-js/common.js"></script>
+    <script src="assets/js/custom-js/attendance/attendance.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>
 </body>

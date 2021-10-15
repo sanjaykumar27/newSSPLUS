@@ -5,6 +5,7 @@ $(function() {
 });
 
 function CalculateDateDiff() {
+    console.log('rere');
     document.getElementById("current-end-date").min = $("#current-start-date").val();
     var start_date = $("#current-start-date").val();
     var end_date = $("#current-end-date").val();

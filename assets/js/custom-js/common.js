@@ -16,7 +16,7 @@ $(function() {
 
     today = yyyy + '-' + mm + '-' + dd;
     $("#dashboardDate").val(today);
-    console.log(WebHTML());
+    // console.log(WebHTML());
 });
 
 function ShowNotif(message, type) {
@@ -60,12 +60,12 @@ function hideDiv(id) {
 }
 
 function LoadTableJSON() {
-    $.getJSON("assets/json/table-title.json", function(data) {
-        $("#employee-tb-title-json").text(data.en.employee_list);
-        $("#organization-tb-title-json").text(data.en.organization_list);
-    }).fail(function() {
-        console.log("Unable to load json file.");
-    });
+    // $.getJSON("assets/json/table-title.json", function(data) {
+    //     $("#employee-tb-title-json").text(data.en.employee_list);
+    //     $("#organization-tb-title-json").text(data.en.organization_list);
+    // }).fail(function() {
+    //     console.log("Unable to load json file.");
+    // });
 }
 
 function ActivateTab(prevTab, newTab) {

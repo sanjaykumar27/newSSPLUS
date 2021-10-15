@@ -484,7 +484,7 @@
                     <div class="toolbar" id="kt_toolbar">
                         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
                             <div data-kt-place="true" data-kt-place-mode="prepend" data-kt-place-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1">
-                                <h1 class="d-flex align-items-center my-1 fs-4">Organization </h1>
+                                <h1 class="d-flex align-items-center my-1 fs-4">Employee List </h1>
                             </div>
                         </div>
                     </div>
@@ -494,52 +494,195 @@
                         <!--begin::Main Container content container-->
                         <div id="kt_content_container" class="container-fluid px-5">
                             <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="card-title">
-                                        <div class="d-flex align-items-center position-relative my-1">
-                                            <input type="text" id="org-list-search" onkeyup="searchOrg(this.value)" data-kt-customer-table-filter="search" class="form-control form-control-solid w-550px" placeholder="Search Organization">
+                                <div class="card-body">
+                                    <ul class="bg-light px-5 pb-7 pt-2 nav nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-3">
+                                        <li class="nav-item  me-3">
+                                            <a class="nav-link fw-bolder text-active-primary text-dark pb-4 active" data-bs-toggle="tab" href="#leave_details" id="leave_details_title">Leave Details</a>
+                                        </li>
+                                        <li class="nav-item  me-3">
+                                            <a class="nav-link fw-bolder text-active-primary text-dark pb-4" data-bs-toggle="tab" href="#leave_entry" id="leave_entry_title">Leave entry and approval</a>
+                                        </li>
+                                        <li class="nav-item  me-3">
+                                            <a class="nav-link fw-bolder text-active-primary text-dark pb-4" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#holiday_list" id="holiday_list_title">Holiday</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="tabCreateOrganization">
+                                        <div class="tab-pane fade show active" id="leave_details" role="tabpanel">
+                                            <div class="w-100" style="min-height:330px">
+                                                <div class="row d-flex justify-content-end mb-3">
+                                                    <div class="col-auto" style="display: none;">
+                                                        <button class="btn btn-danger btn-sm" type="button" id="remove-Leave"><img src="assets/media/icons/duotone/Code/Minus.svg"/>Remove Leave</button>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <button class="btn btn-success btn-sm" type="button" id="add-more-Leave" style="display: none;"><img src="assets/media/icons/duotone/Code/Plus.svg"/>
+                                                            Add More Leave</button>
+                                                        <button class="btn btn-primary btn-sm" type="button" id="add-leave-button" data-bs-toggle="modal" data-bs-target="#modalLeaveSetting" >Create Leave</button>
+                                                        <!-- onclick="showDiv('add-more-Leave');showDiv('leave-detail-form');hideDiv('add-leave-button');hideDiv('leave-detail-table');" -->
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive" id="leave-detail-table">
+                                                    <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                        <thead class="bg-light-primary">
+                                                            <tr class="text-start fw-bolder fs-7 text-uppercase gs-0">
+                                                                <th></th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Leave Type</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Leave Short name</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Leave Limit</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Carry forward</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Paid Leave</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Applicable to</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center">
+                                                                    <div class="form-check form-check-custom form-check-solid d-flex justify-content-center">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center">1</td>
+                                                                <td>Annual Leave</td>
+                                                                <td>AL</td>
+                                                                <td>12</td>
+                                                                <td>5</td>
+                                                                <td>Yes</td>
+                                                                <td>All</td>
+                                                                <td>
+                                                                    <button class="btn btn-light-primary btn-sm">Edit</button>
+                                                                    <a href="javascript:void(0)" class="btn btn-light-danger btn-sm">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card-toolbar">
-                                        <a href="create_organization.html" class="btn btn-primary ">
-                                            <span class="svg-icon svg-icon-2"> </span> Create Organization</a>
-                                        <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
-                                        </button>
-                                        <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
-                                            <i class="fas fa-download"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <div class="table-responsive">
-                                        <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
-                                            <thead class="bg-light-primary">
-                                                <tr class="fw-bold">
-                                                    <th></th>
-                                                    <th>S.no</th>
-                                                    <th>Organization Name</th>
-                                                    <th>Email ID</th>
-                                                    <th>Contact Number</th>
-                                                    <td>Default Organization</td>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="org-list-table">
+                                        <div class="tab-pane fade" id="leave_entry" role="tabpanel">
+                                            <div class="row d-flex justify-content-end">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-danger btn-sm" type="button" id="remove-Leave" style="display: none;"><img src="assets/media/icons/duotone/Code/Minus.svg"/>Remove Leave Entry</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button class="btn btn-success btn-sm" type="button" id="add-Leave" style="display: none;"><img src="assets/media/icons/duotone/Code/Plus.svg"/>
+                                                         Add More Leave Entry</button>
+                                                    <button class="btn btn-primary btn-sm" type="button" id="leave-entry-form" data-bs-toggle="modal" data-bs-target="#modalLeaveEntry">
+                                                    Create Leave Entry</button>
+                                                    <!-- onclick="showDiv('add-more-Leave');showDiv('add-more-Leave-entry');hideDiv('leave-entry-form');hideDiv('leave-list-list');" -->
+                                                </div>
+                                            </div>
+                                            <div class="w-100 mt-5">
+                                                <div class="table-responsive" id="leave-list-list">
+                                                    <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                        <thead class="bg-light-primary">
+                                                            <tr class="text-start fw-bolder fs-7 text-uppercase gs-0">
+                                                                <th></th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Employee Name</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Leave Type</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">From Date</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">To Date</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Hours</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Reporting Manager</th>
+                                                                <th class="fw-boldest text-gray-700 text-uppercase">Application Date</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center">
+                                                                    <div class="form-check form-check-custom form-check-solid d-flex justify-content-center">
+                                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="d-flex justify-content-center align-items-center" id="org-pagination">
-                                        <ul class="pagination" id="org-list-pagination">
+                                                                    </div>
+                                                                </td>
+                                                                <td>1</td>
+                                                                <td class="text-center">Siva S</td>
+                                                                <td>CL</td>
+                                                                <td>03-04-2021</td>
+                                                                <td>03-04-2021</td>
+                                                                <td>8</td>
+                                                                <td>All</td>
+                                                                <td>02-04-2021 10:10 AM</td>
+                                                                <td>
+                                                                    <div class="dropdown">
+                                                                        <button class="btn btn-secondary btn-icon btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                            <i class="fas fa-ellipsis-v"></i>
+                                                                        </button>
+                                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                                            <li><a class="dropdown-item" href="#">Approve</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Reject</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Cancel</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                
+                                            </div>
+                                            <!-- <div class="d-flex justify-content-end pt-15">
+                                                <button class="btn btn-sm btn-secondary me-3" onclick="ActivateTab('leave_entry','leave_details')"><- Back</button>
+                                                <button class="btn btn-primary btn-sm" onclick="ActivateTab('leave_entry','holiday_list');hideDiv('add-more-Leave');hideDiv('add-Leave');showDiv('leave-detail-form');showDiv('Leave-list');">Save & Continue -></button>
+                                            </div> -->
+                                        </div>
+                                        <div class="tab-pane fade" id="holiday_list" role="tabpanel">
+                                            <div class="row d-flex justify-content-end">
+                                                <div class="col-auto">
+                                                    <button class="btn btn-danger btn-sm" type="button" id="remove-department" style="display: none;"><img src="assets/media/icons/duotone/Code/Minus.svg"/>Remove Department</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button class="btn btn-success btn-sm" type="button" id="add-department" style="display: none;"><img src="assets/media/icons/duotone/Code/Plus.svg"/>
+                                                         Add More Holiday
+                                                    </button>
+                                                    <button class="btn btn-primary btn-sm" type="button" id="add-department-static" data-bs-toggle="modal" data-bs-target="#modalHolidaySetting" >Create Holiday</button>
+                                                    <!-- onclick="showDiv('add-more-department');showDiv('add-department');hideDiv('add-department-static');hideDiv('department-list');" -->
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive mt-5" id="department-list">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
+                                                    <thead class="bg-light-primary">
+                                                        <tr class="text-start fw-bolder fs-7 text-uppercase gs-0">
+                                                            <th></th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Holiday Name</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Holiday Date</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Branch</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Holiday Type</th>
+                                                            <th class="fw-boldest text-gray-700 text-uppercase">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">
+                                                                <div class="form-check form-check-custom form-check-solid d-flex justify-content-center">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
 
-                                        </ul>
-                                        <select class="form-select ms-5 w-125px" onchange="getOrgList('',0,this.value)">
-                                            <option value="5" selected>5</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="20">20</option>
-                                        </select>
-                                        <span class="ms-5 fw-bolder">Records</span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center">1</td>
+                                                            <td>Gandhi Jayanti</td>
+                                                            <td>2nd October</td>
+                                                            <td>All</td>
+                                                            <td>National</td>
+                                                            <td>
+                                                                <button class="btn btn-light-primary btn-sm">Edit</button>
+                                                                <a href="javascript:void(0)" class="btn btn-light-danger btn-sm">Delete</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            
+                                            <!-- <div class="d-flex justify-content-end pt-15">
+                                                <button class="btn btn-sm btn-secondary me-3" onclick="ActivateTab('holiday_list','leave_entry')"><- Back</button>
+                                                <button class="btn btn-primary btn-sm">Submit</button>
+                                            </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -743,39 +886,208 @@
         <!--end::Svg Icon-->
     </div>
     
-    <div class="modal fade" id="modalDeleteOrganizationBranch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="modalLeaveSetting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Branch</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create Leave</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <input type="hidden" id="delete-modal-branch-id">
-                    <p class="fs-3">Are you sure, you want to delete <span id="modal-branch-name" class="badge badge-light-dark"></span> ??</p>
+                <div class=" modal-body">
+                    <div id="leave-detail-form">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <label class=" fs-5 fw-bold mb-2 required">Leave Type</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-lg-3">
+                                <label class=" fs-5 fw-bold mb-2 required">Leave Short name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-lg-3">
+                                <label class=" fs-5 fw-bold mb-2 required">Assigned leave limit</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-lg-3">
+                                <label class=" fs-5 fw-bold mb-2 required">Carry forward</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-3">
+                                <label for="" class="mb-4">Applicable To</label>
+                                <div class="form-check form-check-custom form-check-solid">
+                                    <input class="form-check-input" name="ot_hours" checked type="checkbox" value="" id="flexCheckDefault" />
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" name="ot_hours" checked type="checkbox" value="" id="flexCheckDefault" />
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Female
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" name="ot_hours" checked type="checkbox" value="" id="flexCheckDefault" />
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Others
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="" class="mb-4">Paid Leave</label>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" checked id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="DeleteBranch()" data-bs-dismiss="modal">Yes, Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
                 </div>
             </div>
         </div>
     </div>
-	
-	<div class="modal fade" id="modalDeleteOrganizationDepartment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+
+    <div class="modal fade" id="modalLeaveEntry" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Department</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create Leave Entry & Approval</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <input type="hidden" id="delete-modal-dept-id">
-                    <p class="fs-3">Are you sure, you want to delete <span id="modal-dept-name" class="badge badge-light-dark"></span> ??</p>
+                <div class=" modal-body">
+                    <div id="add-more-Leave-entry" >
+                        <div class="row mt-4">
+                            <div class="col-4">
+                                <label class=" fs-5 fw-bold mb-2 required">Employee Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class=" fs-5 fw-bold mb-2 required">Leave Type</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class=" fs-5 fw-bold mb-2 required">Paid leave</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-4">
+                                <label class=" fs-5 fw-bold mb-2 required">From Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class=" fs-5 fw-bold mb-2 required">To Date</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class=" fs-5 fw-bold mb-2 required">Hours</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-3">
+                                <label class=" fs-5 fw-bold mb-2 required">Manager</label>
+                                <select name="" class="form-select" id="">
+                                    <option value="1">Sanjay</option>
+                                    <option value="2">Ravi</option>
+                                    <option value="3">Akshay</option>
+                                    <option value="4">Pinki</option>
+                                    <option value="5">Simran</option>
+                                </select>
+                            </div>
+                            <div class="col-3">
+                                <label class=" fs-5 fw-bold mb-2 required">Remark</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-3">
+                                <label class=" fs-5 fw-bold mb-2 required">Send Notification to Manager & Employee</label>
+                                <div class="form-check form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" type="radio" value="" name="ot_switch" id="flexRadioSm1" />
+                                    <label class="form-check-label" for="flexRadioSm">
+                                       Yes
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-custom form-check-solid mt-3">
+                                    <input class="form-check-input" type="radio" value="" name="ot_switch" id="flexRadioSm2" />
+                                    <label class="form-check-label" for="flexRadioSm">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="DeleteDepartment()" data-bs-dismiss="modal">Yes, Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalHolidaySetting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create Holiday</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="w-100 mt-5" id="add-more-department">
+                        <div id="add-more-holiday">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <label class=" fs-5 fw-bold mb-2 required">Holiday Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-lg-2">
+                                    <label class=" fs-5 fw-bold mb-2 required">Holiday Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-lg-2">
+                                    <label class=" fs-5 fw-bold mb-2 required">Branch</label>
+                                    <select name="" class="form-select" id="">
+                                        <option value="">All</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2">
+                                    <label class=" fs-5 fw-bold mb-2 required">Department</label>
+                                    <select name="" class="form-select" id="">
+                                        <option value="">All</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class=" fs-5 fw-bold mb-2 required">Holiday Type</label>
+                                    <div class="form-check form-check-custom form-check-solid mt-3">
+                                        <input class="form-check-input" type="radio" value="" name="ot_switch" id="flexRadioSm1" />
+                                        <label class="form-check-label" for="flexRadioSm">
+                                            Optional
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-custom form-check-solid mt-3">
+                                        <input class="form-check-input" type="radio" value="" name="ot_switch" id="flexRadioSm2" />
+                                        <label class="form-check-label" for="flexRadioSm">
+                                           Compulsory
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
                 </div>
             </div>
         </div>
@@ -787,11 +1099,7 @@
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/modals/create-app.js"></script>
     <script src="assets/js/custom/modals/upgrade-plan.js"></script>
-    <script src="assets/js/custom-js/organization/create-organization.js"></script>
-    <script src="assets/js/custom-js/organization/organization-list.js"></script>
-    <script src="assets/js/custom-js/branch/create-branch.js"></script>
-    <script src="assets/js/custom-js/add-department.js"></script>
-    <script src="assets/js/custom-js/add-designation.js"></script>
+    <script src="assets/js/custom-js/create-Leave.js"></script>
     <script src="assets/js/custom-js/common.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>

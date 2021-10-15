@@ -484,7 +484,7 @@
                     <div class="toolbar" id="kt_toolbar">
                         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
                             <div data-kt-place="true" data-kt-place-mode="prepend" data-kt-place-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1">
-                                <h1 class="d-flex align-items-center my-1 fs-4">Organization </h1>
+                                <h1 class="d-flex align-items-center my-1 fs-4">Shift Management </h1>
                             </div>
                         </div>
                     </div>
@@ -497,16 +497,40 @@
                                 <div class="card-header border-0">
                                     <div class="card-title">
                                         <div class="d-flex align-items-center position-relative my-1">
-                                            <input type="text" id="org-list-search" onkeyup="searchOrg(this.value)" data-kt-customer-table-filter="search" class="form-control form-control-solid w-550px" placeholder="Search Organization">
+                                            <!--end::Svg Icon-->
+                                            <input type="text" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="Search Organization">
                                         </div>
+                                        <!--end::Search-->
                                     </div>
                                     <div class="card-toolbar">
-                                        <a href="create_organization.html" class="btn btn-primary ">
-                                            <span class="svg-icon svg-icon-2"> </span> Create Organization</a>
-                                        <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"> <i class="fas fa-print"></i>
+                                        <!--begin::Toolbar-->
+                                            <a href="create_shift.html" class="btn btn-primary fw-boldest">
+                                            <!--begin::Svg Icon | path: icons/duotone/Navigation/Plus.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"></rect>
+                                                    <rect fill="#000000" opacity="0.5" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000)" x="4" y="11" width="16" height="2" rx="1"></rect>
+                                                </c>
+                                            </span>
+                                            <!--end::Svg Icon-->Create Shift</a>
+
+                                            <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Print Records"
+                                            <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Devices/Printer.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24"/>
+                                                    <path d="M16,17 L16,21 C16,21.5522847 15.5522847,22 15,22 L9,22 C8.44771525,22 8,21.5522847 8,21 L8,17 L5,17 C3.8954305,17 3,16.1045695 3,15 L3,8 C3,6.8954305 3.8954305,6 5,6 L19,6 C20.1045695,6 21,6.8954305 21,8 L21,15 C21,16.1045695 20.1045695,17 19,17 L16,17 Z M17.5,11 C18.3284271,11 19,10.3284271 19,9.5 C19,8.67157288 18.3284271,8 17.5,8 C16.6715729,8 16,8.67157288 16,9.5 C16,10.3284271 16.6715729,11 17.5,11 Z M10,14 L10,20 L14,20 L14,14 L10,14 Z" fill="#fff"/>
+                                                    <rect fill="#fff" opacity="0.3" x="8" y="2" width="8" height="2" rx="1"/>
+                                                </g>
+                                            </svg><!--end::Svg Icon--></span>
                                         </button>
-                                        <button class="btn btn-icon btn-primary ms-3" data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records">
-                                            <i class="fas fa-download"></i>
+                                        <button class="btn btn-icon btn-primary ms-3"  data-bs-toggle="tooltip" data-bs-placement="right" title="Download Records"
+                                        <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Files/Cloud-download.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <polygon points="0 0 24 0 24 24 0 24"/>
+                                                <path d="M5.74714567,13.0425758 C4.09410362,11.9740356 3,10.1147886 3,8 C3,4.6862915 5.6862915,2 9,2 C11.7957591,2 14.1449096,3.91215918 14.8109738,6.5 L17.25,6.5 C19.3210678,6.5 21,8.17893219 21,10.25 C21,12.3210678 19.3210678,14 17.25,14 L8.25,14 C7.28817895,14 6.41093178,13.6378962 5.74714567,13.0425758 Z" fill="#fff" opacity="0.3"/>
+                                                <path d="M11.1288761,15.7336977 L11.1288761,17.6901712 L9.12120481,17.6901712 C8.84506244,17.6901712 8.62120481,17.9140288 8.62120481,18.1901712 L8.62120481,19.2134699 C8.62120481,19.4896123 8.84506244,19.7134699 9.12120481,19.7134699 L11.1288761,19.7134699 L11.1288761,21.6699434 C11.1288761,21.9460858 11.3527337,22.1699434 11.6288761,22.1699434 C11.7471877,22.1699434 11.8616664,22.1279896 11.951961,22.0515402 L15.4576222,19.0834174 C15.6683723,18.9049825 15.6945689,18.5894857 15.5161341,18.3787356 C15.4982803,18.3576485 15.4787093,18.3380775 15.4576222,18.3202237 L11.951961,15.3521009 C11.7412109,15.173666 11.4257142,15.1998627 11.2472793,15.4106128 C11.1708299,15.5009075 11.1288761,15.6153861 11.1288761,15.7336977 Z" fill="#fff" fill-rule="nonzero" transform="translate(11.959697, 18.661508) rotate(-270.000000) translate(-11.959697, -18.661508) "/>
+                                            </g>
+                                        </svg><!--end::Svg Icon--></span>
                                         </button>
                                     </div>
                                 </div>
@@ -514,30 +538,57 @@
                                     <div class="table-responsive">
                                         <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
                                             <thead class="bg-light-primary">
-                                                <tr class="fw-bold">
+                                                <tr class="text-start fw-bolder fs-7 text-uppercase gs-0">
                                                     <th></th>
-                                                    <th>S.no</th>
-                                                    <th>Organization Name</th>
-                                                    <th>Email ID</th>
-                                                    <th>Contact Number</th>
-                                                    <td>Default Organization</td>
-                                                    <th>Action</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Shift Name</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Timings</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Break Duration</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Min work hours half day</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Min work hours full day</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Work Days</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Grace Time</th>
+                                                    <th class="fw-boldest text-gray-700 text-uppercase">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="org-list-table">
-
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <div class="form-check form-check-custom form-check-solid d-flex justify-content-center">
+                                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">1</td>
+                                                    <td>General</td>
+                                                    <td>9:00 AM - 6:00 PM</td>
+                                                    <td>30 Min</td>
+                                                    <td>4 Hours</td>
+                                                    <td>8.5 Hours</td>
+                                                    <td>Mon - Saturday</td>
+                                                    <td>15 Min</td>
+                                                    <td>
+                                                        <button class="btn btn-light-primary btn-sm">Edit</button>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="d-flex justify-content-center align-items-center" id="org-pagination">
-                                        <ul class="pagination" id="org-list-pagination">
-
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <ul class="pagination">
+                                            <li class="page-item previous disabled"><a href="#" class="page-link"><i class="previous"></i></a></li>
+                                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                            <li class="page-item "><a href="#" class="page-link">2</a></li>
+                                            <li class="page-item "><a href="#" class="page-link">3</a></li>
+                                            <li class="page-item "><a href="#" class="page-link">4</a></li>
+                                            <li class="page-item "><a href="#" class="page-link">5</a></li>
+                                            <li class="page-item "><a href="#" class="page-link">6</a></li>
+                                            <li class="page-item next"><a href="#"  class="page-link"><i class="next"></i></a></li>
                                         </ul>
-                                        <select class="form-select ms-5 w-125px" onchange="getOrgList('',0,this.value)">
-                                            <option value="5" selected>5</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
+                                        <select class="form-select ms-5 w-125px">
+                                            <option value="10" selected>10</option>
                                             <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
                                         </select>
                                         <span class="ms-5 fw-bolder">Records</span>
                                     </div>
@@ -743,43 +794,7 @@
         <!--end::Svg Icon-->
     </div>
     
-    <div class="modal fade" id="modalDeleteOrganizationBranch" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Branch</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" id="delete-modal-branch-id">
-                    <p class="fs-3">Are you sure, you want to delete <span id="modal-branch-name" class="badge badge-light-dark"></span> ??</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="DeleteBranch()" data-bs-dismiss="modal">Yes, Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-	
-	<div class="modal fade" id="modalDeleteOrganizationDepartment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Delete Department</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" id="delete-modal-dept-id">
-                    <p class="fs-3">Are you sure, you want to delete <span id="modal-dept-name" class="badge badge-light-dark"></span> ??</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="DeleteDepartment()" data-bs-dismiss="modal">Yes, Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
@@ -787,11 +802,6 @@
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/modals/create-app.js"></script>
     <script src="assets/js/custom/modals/upgrade-plan.js"></script>
-    <script src="assets/js/custom-js/organization/create-organization.js"></script>
-    <script src="assets/js/custom-js/organization/organization-list.js"></script>
-    <script src="assets/js/custom-js/branch/create-branch.js"></script>
-    <script src="assets/js/custom-js/add-department.js"></script>
-    <script src="assets/js/custom-js/add-designation.js"></script>
     <script src="assets/js/custom-js/common.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>
