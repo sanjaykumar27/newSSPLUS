@@ -3,19 +3,20 @@ $(function() {
     if (window.location.search.substring(1).split('emp_id=')[1] != '' && window.location.search.indexOf('emp_id') == 1) {
         GetEmpDetail(window.location.search.substring(1).split('emp_id=')[1]);
     }
-
-    $("#div_basic_da").hide();
-    $("#div_hra").hide();
+    IsApplicable();
+    // $("#div_basic_da").hide();
+    // $("#div_hra").hide();
+    // $("#div_da").hide();
     $("#div_ta").hide();
-    $("#div_ma").hide();
+    // $("#div_ma").hide();
     $("#div_sa").hide();
-    $("#div_lta").hide();
+    // $("#div_lta").hide();
     $("#div_mal").hide();
     $("#div_bonus").hide();
     $("#div_lwf").hide();
-    $("#div_pt").hide();
+    // $("#div_pt").hide();
     $("#div_esi").hide();
-    $("#div_pf").hide();
+    // $("#div_pf").hide();
 
     $("#non-ctc-payroll-setting").hide();
     $("#ctc-payroll-setting").hide();
@@ -250,6 +251,13 @@ function SalarySetting() {
         $("#input_hra").val('0');
     }
 
+    if($("#salary_da").prop("checked")) {
+        $("#div_da").show();
+    } else {
+        $("#div_da").hide();
+        $("#input_da").val('0');
+    }
+
     if($("#salary_transportation_allowance").prop("checked")) { 
         $("#div_ta").show();
     } else {
@@ -296,7 +304,7 @@ function SalarySetting() {
 }
 
 function TotalEarning() {
-    var total_salary = parseInt($("#input_basic_da").val()) + parseInt($("#input_hra").val())  + parseInt($("#input_transportation_allowance").val()) + parseInt($("#input_medical_allowance").val()) + parseInt($("#input_special_allowance").val()) + parseInt($("#input_leave_travel_allowance").val()) + parseInt($("#input_meal_allowance").val())  + parseInt($("#input_bonus").val());
+    var total_salary = parseInt($("#input_basic_da").val()) + parseInt($("#input_da").val()) + parseInt($("#input_hra").val())  + parseInt($("#input_transportation_allowance").val()) + parseInt($("#input_medical_allowance").val()) + parseInt($("#input_special_allowance").val()) + parseInt($("#input_leave_travel_allowance").val()) + parseInt($("#input_meal_allowance").val())  + parseInt($("#input_bonus").val());
     
     $("#input_total_earning").val(total_salary);
     $("#input_gross_pay").val(total_salary);
@@ -331,19 +339,22 @@ function DeductionSetting()
         $("#div_lwf").hide();
         $("#input_lwf").val('0');
     }
-    
 }
 
 function TotalDeduction() {
     var total_deduction = parseInt($("#input_pf").val()) + parseInt($("#input_esi").val())  + parseInt($("#input_pt").val()) + parseInt($("#input_lwf").val());
+    console.log(total_deduction);
     $("#input_total_deduction").val(total_deduction);
     setTimeout(function(){ 
         CalculateGrossNet();
-    }, 500);
+    }, 1000);
 }
 
 function CalculateGrossNet() {
-    $("#input_net_pay_in_hand").val(parseInt($("#input_gross_pay").val()) + + parseInt($("#contribution_total").val()) - parseInt($("#input_total_deduction").val()));
+    var gp = parseInt($("#input_gross_pay").val());
+    var contr = parseInt($("#contribution_total").val());
+    var dedu =  parseInt($("#input_total_deduction").val());
+    $("#input_net_pay_in_hand").val((gp+contr)-dedu);
 }
 
 function ContributionSetting() {
@@ -403,4 +414,42 @@ function TotalContribution() {
     $("#contribution_total").val(total_salary);
 
     CalculateGrossNet();
+}
+
+
+function IsApplicable() {
+    if($("#pf_applicable_yes").prop('checked') || $("#esi_applicable_yes").prop('checked') || $("#pt_applicable_yes").prop('checked')) {
+        $("#is_deduction_applicable").show();
+    } else {
+        $("#is_deduction_applicable").hide();
+    }
+}
+
+function MonthlySalary() {
+    var monthly = $("#monthly_salary_ctc").val();
+
+    
+    var basic = monthly/2;
+    var da = monthly * .12;
+    var hra = monthly * .20;
+    var conveyance = monthly * .16;
+    var medical = monthly * .02;
+
+    var pf = monthly * 0.12;
+    var professional_tax = 200;
+
+    $("#input_basic_da").val(basic);
+    $("#input_da").val(da);
+    $("#input_hra").val(hra);
+    $("#input_medical_allowance").val(medical);
+    $("#input_leave_travel_allowance").val(conveyance);
+
+    $("#input_pf").val(pf);
+    $("#input_pt").val(professional_tax);
+    
+
+    SalarySetting();
+    setTimeout(function(){ 
+        TotalDeduction();
+    }, 1000);
 }
