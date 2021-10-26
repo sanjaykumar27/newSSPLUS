@@ -23,3 +23,8 @@ function AddNewItem(item_type,val) {
         $("#new_expense_type").hide();
     }
 }
+
+
+function SalaryComponents() {
+    const cars = ["Saab", "Volvo", "BMW"];
+}

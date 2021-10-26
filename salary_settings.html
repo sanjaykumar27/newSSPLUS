@@ -87,22 +87,8 @@
                 <!--end::Aside menu-->
                 <!--begin::Footer-->
                 <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-                    <a href="documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-delay-show="8000" title="Check out the complete documentation with over 100 components">
-                        <span class="btn-label">Docs &amp; Components</span>
-                        <!--begin::Svg Icon | path: icons/duotone/General/Clipboard.svg-->
-                        <span class="svg-icon btn-icon svg-icon-2">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<rect x="0" y="0" width="24" height="24" />
-										<path d="M8,3 L8,3.5 C8,4.32842712 8.67157288,5 9.5,5 L14.5,5 C15.3284271,5 16,4.32842712 16,3.5 L16,3 L18,3 C19.1045695,3 20,3.8954305 20,5 L20,21 C20,22.1045695 19.1045695,23 18,23 L6,23 C4.8954305,23 4,22.1045695 4,21 L4,5 C4,3.8954305 4.8954305,3 6,3 L8,3 Z" fill="#000000" opacity="0.3" />
-										<path d="M11,2 C11,1.44771525 11.4477153,1 12,1 C12.5522847,1 13,1.44771525 13,2 L14.5,2 C14.7761424,2 15,2.22385763 15,2.5 L15,3.5 C15,3.77614237 14.7761424,4 14.5,4 L9.5,4 C9.22385763,4 9,3.77614237 9,3.5 L9,2.5 C9,2.22385763 9.22385763,2 9.5,2 L11,2 Z" fill="#000000" />
-										<rect fill="#000000" opacity="0.3" x="7" y="10" width="5" height="2" rx="1" />
-										<rect fill="#000000" opacity="0.3" x="7" y="14" width="9" height="2" rx="1" />
-									</g>
-								</svg>
-							</span>
-                        <!--end::Svg Icon-->
-                    </a>
+                    <a href="#" class="btn btn-sm py-2 btn-secondary w-100" onclick="SignOut()"> <span class="fs-3 text-dark">Logout</span> <span class="svg-icon btn-icon svg-icon-2"></span> </a>
+                    <a href="#" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-delay-show="8000" title="Check out the complete documentation with over 100 components"> <span class="btn-label text-warning">Powered by <br>SSPlus</span> <span class="svg-icon btn-icon svg-icon-2"></span> </a>
                 </div>
                 <!--end::Footer-->
             </div>
@@ -504,7 +490,7 @@
                     <div class="toolbar" id="kt_toolbar">
                         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
                             <div data-kt-place="true" data-kt-place-mode="prepend" data-kt-place-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1">
-                                <h1 class="d-flex align-items-center my-1 fs-4">Create Employee </h1>
+                                <h1 class="d-flex align-items-center my-1 fs-4">Salary Setting</h1>
                             </div>
                         </div>
                     </div>
@@ -515,301 +501,7 @@
                         <div id="kt_content_container" class="container-fluid px-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <ul class="bg-light px-5 pb-7 pt-2 nav nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-8">
-                                        <li class="nav-item  me-3">
-                                            <a class="nav-link fw-bolder text-active-primary text-dark pb-4 active" data-bs-toggle="tab" href="#kt_general_setting" id="kt_general_setting_title">General Settings</a>
-                                        </li>
-                                        <li class="nav-item  me-3">
-                                            <a class="nav-link fw-bolder text-active-primary text-dark pb-4" data-bs-toggle="tab" href="#kt_over_time" id="kt_over_time_title">Over Time Settings</a>
-                                        </li>
-                                        <li class="nav-item  me-3">
-                                            <a class="nav-link fw-bolder text-active-primary text-dark pb-4" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_attendance_policy_setting" id="kt_attendance_policy_setting_title">Attendance Policy & Notification</a>
-                                        </li>
-                                    </ul>
 
-                                    <div class="tab-content" id="tabCreateShift">
-                                        <div class="tab-pane fade show active" id="kt_general_setting" role="tabpanel">
-                                            <div class="w-100" style="min-height:330px">
-                                                <div class="row">
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Shift Name</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Shift Short Name</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Start Time</label>
-                                                        <div class="input-group bootstrap-timepicker timepicker">
-															<input id="kt_timepicker_1" type="text" class="form-control input-small">
-															<span class="input-group-addon d-flex align-items-center"><i class="align-items-center bg-secondary border d-flex fa-clock far h-100 justify-content-center px-2 px-4"></i></span>
-														</div>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">End Time</label>
-                                                        <div class="input-group bootstrap-timepicker timepicker">
-															<input id="kt_timepicker_2" type="text" class="form-control input-small">
-															<span class="input-group-addon d-flex align-items-center"><i class="align-items-center bg-secondary border d-flex fa-clock far h-100 justify-content-center px-2 px-4"></i></span>
-														</div>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Totak break duration in each Shift</label>
-                                                        <input type="time" class="form-control">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Minimum work hours half day</label>
-                                                        <input type="time" class="form-control">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Minimum work hours full day</label>
-                                                        <input type="time" class="form-control">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Working days in a week</label>
-                                                        <select multiple class="form-select form-select-solid" data-control="select2" data-placeholder="Select an option" data-allow-clear="true">
-                                                            <option></option>
-                                                            <option value="1">Monday</option>
-                                                            <option value="2">Tuesday</option>
-                                                            <option value="3">Wednesday</option>
-                                                            <option value="4">Thursday</option>
-                                                            <option value="5">Friday</option>
-                                                            <option value="6">Saturday</option>
-                                                            <option value="7">Sunday</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Grace time for late (in minutes)</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label class=" fs-5 fw-bold mb-2 required">Grace time for early out (in minutes)</label>
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-end pt-15">
-                                                <!-- <button class="btn btn-sm btn-secondary me-3"><- Back</button> -->
-                                                <button class="btn btn-primary btn-sm" onclick="ActivateTab('kt_general_setting','kt_over_time')">Save & Continue -></button>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="kt_over_time" role="tabpanel">
-                                            <div class="w-100 mt-5" style="min-height:280px">
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-switch" onclick="ShowOTSetting()">
-                                                            <input class="form-check-input" type="checkbox"  id="overtime-applicable">
-                                                            <label class="form-check-label" for="flexSwitchCheckChecked">Is overtime applicable ?</label>
-                                                          </div>
-                                                    </div>
-                                                    
-                                                </div>
-                                                <div id="overtime-setting">
-                                                    <div class="row mt-4">
-                                                        <div class="col-lg-4">
-                                                            <label class=" fs-5 fw-bold mb-2 required">Min over time hours (in minutes)</label>
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-check form-check-custom form-check-solid mt-3">
-                                                                <input class="form-check-input" type="radio" value="" name="ot_switch" id="flexRadioSm1"  />
-                                                                <label class="form-check-label" for="flexRadioSm">
-                                                                    Out time - shift end time
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check form-check-custom form-check-solid mt-3">
-                                                                <input class="form-check-input" type="radio" value="" name="ot_switch" id="flexRadioSm2"  />
-                                                                <label class="form-check-label" for="flexRadioSm">
-                                                                    Total Duration - shift duration
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check form-check-custom form-check-solid mt-3">
-                                                                <input class="form-check-input" type="radio" value="" name="ot_switch" id="flexRadioSm3"  />
-                                                                <label class="form-check-label" for="flexRadioSm">
-                                                                    Early coming + Late going time
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-check form-check-custom form-check-solid">
-                                                                <input class="form-check-input" name="ot_hours"  type="checkbox" value="" id="flexCheckDefault"/>
-                                                                <label class="form-check-label" for="flexCheckDefault">
-                                                                   Weekly Off Hours calculates as OT hours
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check form-check-custom form-check-solid mt-3">
-                                                                <input class="form-check-input" name="ot_hours" type="checkbox" value="" id="flexCheckDefault"/>
-                                                                <label class="form-check-label" for="flexCheckDefault">
-                                                                    Holiday Off Hours calculates as OT hours
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-end pt-15">
-                                                <button class="btn btn-sm btn-secondary me-3"  onclick="ActivateTab('kt_over_time','kt_general_setting')"><- Back</button>
-                                                <button class="btn btn-primary btn-sm" onclick="ActivateTab('kt_over_time','kt_attendance_policy_setting');hideDiv('add-more-branch');hideDiv('add-branch');showDiv('add-branch-static');showDiv('branch-list');">Save & Continue -></button>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="kt_attendance_policy_setting" role="tabpanel">
-                                            <div class="w-100 mt-5">
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Do you want to make present if single punch exists? 
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none"  data-bs-toggle="modal" data-bs-target="#kt_modal_1">Email Notification (5 Employee)</a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Email / App Notification when employee is late by
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none">Email Notification</a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Email / App Notification when employee is continously late / absent for
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none">Email Notification</a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Email / App Notification & present employee attendance report after starting each shift within
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none">Email Notification</a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Email / App Notification if employee is working hours is less than
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none">Email Notification</a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Use only first and last punch for attendace calculation
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none">Email Notification</a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Mark as absent for Weekly off and holiday off if employee is absent for whole month
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none">Email Notification</a>
-                                                    </div>
-                                                </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-lg-5">
-                                                        Do you want mobile based attendance to be considered automatically in system
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio1" value="option1">
-                                                            <label class="form-check-label" for="inlineRadio1">Yes</label>
-                                                          </div>
-                                                          <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio2" value="option2">
-                                                            <label class="form-check-label" for="inlineRadio2">No</label>
-                                                          </div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <a href="javascript:void()" class="text-decoration-none">Email Notification</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-end pt-15">
-                                                <button class="btn btn-sm btn-secondary me-3" onclick="ActivateTab('kt_attendance_policy_setting','kt_over_time')"><- Back</button>
-                                                <button class="btn btn-primary btn-sm">Submit</button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1011,7 +703,6 @@
 			</span>
         <!--end::Svg Icon-->
     </div>
-    
 
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
@@ -1019,9 +710,8 @@
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/modals/create-app.js"></script>
     <script src="assets/js/custom/modals/upgrade-plan.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js "></script>
     <script src="assets/js/custom-js/common.js"></script>
-    <script src="assets/js/custom-js/shift/create-shift.js"></script>
+    <script src="assets/js/custom-js/payroll/payroll.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
 	<script src="assets/js/bootstrap-datepicker.js"></script>
 </body>
