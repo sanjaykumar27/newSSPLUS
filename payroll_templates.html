@@ -492,6 +492,7 @@
                             <div data-kt-place="true" data-kt-place-mode="prepend" data-kt-place-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1">
                                 <h1 class="d-flex align-items-center my-1 fs-4">Payroll Templates </h1>
                             </div>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSalaryTemplates">+ New Template</button>
                         </div>
                     </div>
                     <!--end::Toolbar-->
@@ -508,7 +509,6 @@
                                                     <th></th>
                                                     <th class="fw-boldest text-gray-700 text-uppercase text-center">S.no</th>
                                                     <th class="fw-boldest text-gray-700 text-uppercase">Salary Template</th>
-                                                    <th class="fw-boldest text-gray-700 text-uppercase">Employee Name / ID</th>
                                                     <th class="fw-boldest text-gray-700 text-uppercase">Monthly Gross</th>
                                                     <th class="fw-boldest text-gray-700 text-uppercase">Earning</th>
                                                     <th class="fw-boldest text-gray-700 text-uppercase">Deductions</th>
@@ -528,7 +528,6 @@
                                                     </td>
                                                     <td class="text-center">1</td>
                                                     <td>Temp 1</td>
-                                                    <td>Sanjay / SS01</td>
                                                     <td>25000</td>
                                                     <td>25000</td>
                                                     <td></td>
@@ -732,6 +731,24 @@
     </div>
     <!--end::Chat drawer-->
     <!--begin::Scrolltop-->
+
+    <div class="modal fade" id="modalSalaryTemplates" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create Holiday</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
         <!--begin::Svg Icon | path: icons/duotone/Navigation/Up-2.svg-->
         <span class="svg-icon">
