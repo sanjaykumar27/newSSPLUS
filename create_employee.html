@@ -849,7 +849,7 @@
                                             </div>
                                             <div class="tab-pane fade" id="kt_payroll_management" role="tabpanel">
                                                 <div class="w-100" style="min-height:450px">
-                                                    <div class="row">
+                                                    <!-- <div class="row">
                                                         <div class="col-4">
                                                             <label for="">Payroll Type</label>
                                                             <select name="" class="form-select form-select-solid" data-control="select2" data-allow-clear="true" data-placeholder="Select payroll type" data-allow-clear="true" id="payroll_type" onchange="PayrollSetting()">
@@ -858,8 +858,22 @@
                                                                 <option value="CTC">CTC Payroll Setting</option>
                                                             </select>
                                                         </div>
+                                                    </div> -->
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label for="">Salary Template</label>
+                                                            <select name="" class="form-select form-select-solid" data-control="select2" data-allow-clear="true" data-placeholder="Select payroll type" data-allow-clear="true" id="select_template" onchange="SelectTemplate()">
+                                                                <option value="" selected>Select</option>
+                                                                <option value="template_50k">Temp 50K</option>
+                                                                <option value="template_60k">Temp 60K</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label for="">Monthly Salary</label>
+                                                            <input type="number" class="form-control" onchange="MonthlySalary()" id="monthly_salary_ctc">
+                                                        </div>
                                                     </div>
-                                                    <div id="non-ctc-payroll-setting">
+                                                    <!-- <div id="non-ctc-payroll-setting">
                                                         <div class="row mt-4">
                                                             <div class="col-4">
                                                                 <label for="">Salary Template Name</label>
@@ -884,32 +898,7 @@
                                                                 <input type="number" class="form-control">
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div id="ctc-payroll-setting">
-                                                        <div class="row mt-4">
-                                                            <div class="col-4">
-                                                                <label for="">Salary Template Name</label>
-                                                                <input type="text" class="form-control">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <label for="">Salary Cycle (of every month)</label>
-                                                                <input type="text" class="form-control">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <label for="">Total Working days for payroll calculation every month</label>
-                                                                <input type="text" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mt-4">
-                                                            <div class="col-4">
-                                                                <label for="">Starting Account Balance</label>
-                                                                <input type="number" class="form-control">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <label for="">Monthly Salary</label>
-                                                                <input type="number" class="form-control" onchange="MonthlySalary()" id="monthly_salary_ctc">
-                                                            </div>
-                                                        </div>
+                                                    </div> -->
                                                         
                                                         <div class="bg-light border border-secondary card-body mt-5 rounded-3">
                                                             <p class="fs-3 fw-bolder text-uppercase  border-bottom text-success">Earning</p>
@@ -1075,7 +1064,7 @@
                                                         </div>
                                                         <div class="row mt-4">
                                                             <div class="col-3 mt-4" id="contribution_div_basic_da">
-                                                                <label for="">Basic + DA</label>
+                                                                <label for="">Basic</label>
                                                                 <input type="number" class="form-control" id="contribution_input_basic_da" onchange="TotalContribution()">
                                                             </div>
                                                             <div class="col-3 mt-4" id="contribution_div_hra">
@@ -1120,7 +1109,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 <div class="d-flex justify-content-end pt-15">
                                                     <button class="btn btn-sm btn-secondary me-3" onclick="ActivateTab('kt_payroll_management','kt_holiday_setting')"><- Back</button>
                                                     <button class="btn btn-primary btn-sm">Submit</button>

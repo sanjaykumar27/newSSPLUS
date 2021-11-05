@@ -418,23 +418,20 @@ function TotalContribution() {
 
 
 function IsApplicable() {
-    if($("#pf_applicable_yes").prop('checked') || $("#esi_applicable_yes").prop('checked') || $("#pt_applicable_yes").prop('checked')) {
-        $("#is_deduction_applicable").show();
-    } else {
-        $("#is_deduction_applicable").hide();
-    }
+    // if($("#pf_applicable_yes").prop('checked') || $("#esi_applicable_yes").prop('checked') || $("#pt_applicable_yes").prop('checked')) {
+    //     $("#is_deduction_applicable").show();
+    // } else {
+    //     $("#is_deduction_applicable").hide();
+    // }
 }
 
 function MonthlySalary() {
-    var monthly = $("#monthly_salary_ctc").val();
-
-    
+    var monthly = $("#monthly_salary_ctc").val();   
     var basic = monthly/2;
     var da = monthly * .12;
     var hra = monthly * .20;
     var conveyance = monthly * .16;
     var medical = monthly * .02;
-
     var pf = monthly * 0.12;
     var professional_tax = 200;
 
@@ -452,4 +449,19 @@ function MonthlySalary() {
     setTimeout(function(){ 
         TotalDeduction();
     }, 1000);
+}
+
+
+function SelectTemplate() {
+    if($("#select_template").val() == 'template_50k') {
+        $("#monthly_salary_ctc").val(50000);
+    }
+
+    if($("#select_template").val() == 'template_60k') {
+        $("#monthly_salary_ctc").val(60000);
+    }
+
+    setTimeout(function(){  
+        MonthlySalary();
+    }, 500); 
 }
