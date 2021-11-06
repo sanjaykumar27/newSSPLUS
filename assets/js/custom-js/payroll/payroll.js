@@ -2,6 +2,7 @@ $(function(){
     $("#new_deduction_type").hide();
     $("#new_expense_type").hide();
     $("#new_allowane_type").hide();
+    IsApplicable();
 });
 
 function AddNewItem(item_type,val) {
@@ -23,3 +24,4 @@ function AddNewItem(item_type,val) {
         $("#new_expense_type").hide();
     }
 }
+
