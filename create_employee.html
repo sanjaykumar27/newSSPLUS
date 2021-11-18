@@ -102,13 +102,17 @@
                                         class="menu-title">Attendance Management</span> </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link" href="payroll.html"> <span class="menu-icon me-0"><i class="fas fa-mitten text-white-50"></i> </span> <span class="menu-title">Payroll Management</span> </a>
+                                <a class="menu-link" href="payroll.html"> <span class="menu-icon me-0"><i
+                                            class="fas fa-mitten text-white-50"></i> </span> <span
+                                        class="menu-title">Payroll Management</span> </a>
                             </div>
                             <!-- <div class="menu-item">
                                 <a class="menu-link" href="payroll_templates.html"> <span class="menu-icon me-0"><i class="fas fa-mitten text-white-50"></i> </span> <span class="menu-title">Payroll Management te</span> </a>
                             </div> -->
                             <div class="menu-item">
-                                <a class="menu-link" href="salary_settings.html"> <span class="menu-icon me-0"><i class="fas fa-mitten text-white-50"></i> </span> <span class="menu-title">Salary Settings</span> </a>
+                                <a class="menu-link" href="salary_settings.html"> <span class="menu-icon me-0"><i
+                                            class="fas fa-mitten text-white-50"></i> </span> <span
+                                        class="menu-title">Salary Settings</span> </a>
                             </div>
                         </div>
                         <!--end::Menu-->
@@ -906,6 +910,10 @@
                                                                 <textarea type="text" class="form-control" rows="2"
                                                                     id="address" name="address" required></textarea>
                                                             </div>
+                                                            <div class="col-4">
+                                                                <label class=" fs-6 fw-bold mb-2">Employee Photo</label>
+                                                                <input type="file" class="form-control" required>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex justify-content-end pt-15">
@@ -923,14 +931,14 @@
                                                     <div class="w-100" style="min-height:450px">
                                                         <div class="row mt-5">
                                                             <div class="col-4">
-                                                                <label class=" fs-5 fw-bold mb-2">Branch Name</label>
+                                                                <label class=" fs-5 fw-bold mb-2">Assign Role</label>
                                                                 <select name="" class="form-select form-select-solid"
                                                                     data-control="select2" data-allow-clear="true"
                                                                     data-placeholder="Select branch"
                                                                     data-allow-clear="true" id="">
                                                                     <option value="Administrator">Administrator</option>
                                                                     <option value="Manager">Manager</option>
-                                                                    <option value="User">User</option>
+                                                                    <option value="User" selected>User</option>
                                                                 </select>
                                                             </div>
                                                             <div class="col-4">
@@ -946,9 +954,8 @@
                                                         </div>
                                                         <div class="row mt-5">
                                                             <div class="col-4">
-                                                                <label class=" fs-5 fw-bold mb-2 required">Employee
+                                                                <label class=" fs-5 fw-bold mb-2 required">Employement
                                                                     Type</label>
-
                                                                 <select class="form-select form-select-solid"
                                                                     data-control="select2" data-allow-clear="true"
                                                                     data-placeholder="Select employee type"
@@ -960,13 +967,20 @@
                                                             <div class="col-4">
                                                                 <label class="fs-5 fw-bold mb-2 required">Employee
                                                                     Status</label>
-                                                                <input type="text" class="form-control" name="empstatus"
-                                                                    id="empstatus">
+                                                                <select id="empstatus" name="empstatus" class="form-select form-select-solid"
+                                                                    data-control="select2" data-allow-clear="true"
+                                                                    data-placeholder="Select employee type"
+                                                                    data-allow-clear="true" id="emptype" name="emptype">
+                                                                    <option value="Permanent">Active</option>
+                                                                    <option value="Contract">Inactive</option>
+                                                                </select>
+                                                                <!-- <input type="text" class="form-control" name="empstatus"
+                                                                    id="empstatus"> -->
                                                                 <input type="hidden" name="modificationCounter"
                                                                     value="modificationCounter">
                                                             </div>
                                                             <div class="col-4">
-                                                                <label class="fs-5 fw-bold mb-2 required">Badge / Card
+                                                                <label class="fs-5 fw-bold mb-2">Badge / Card
                                                                     Number</label>
                                                                 <input type="text" id="badgeid" name="badgeid"
                                                                     class="form-control">
@@ -1543,7 +1557,7 @@
                                                         <option value="2018-19">2018-19</option>
                                                         <option value="2019-20">2019-20</option>
                                                         <option value="2020-21">2020-21</option>
-                                                     </select>
+                                                    </select>
                                                 </div>
                                                 <div class="row mt-8">
                                                     <div class="table-responsive">
