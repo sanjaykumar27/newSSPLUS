@@ -1,4 +1,5 @@
 $(function() {
+    alert();
     $("#kt_sign_in_form").validate({
         // Specify validation rules
         rules: {

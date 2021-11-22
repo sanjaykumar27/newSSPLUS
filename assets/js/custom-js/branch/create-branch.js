@@ -88,6 +88,7 @@ $(function() {
                         ShowNotif("Branch created succesfully!", "success");
                     }
                     setTimeout(function() {
+                        $("#modalbranchSettings").modal('hide');
                         ActivateTab('kt_branch_setting', 'kt_department_setting');
                         hideDiv('add-more-branch');
                         hideDiv('add-branch');

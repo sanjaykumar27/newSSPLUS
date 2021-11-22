@@ -1,5 +1,5 @@
 $(function() {
-
+    
     if (window.location.search.substring(1).split('org_id=')[1] != '' && window.location.search.indexOf('org_id') == 1) {
         GetOrgDetail(window.location.search.substring(1).split('org_id=')[1]);
     }
@@ -52,6 +52,7 @@ $(function() {
     });
 
     $("#kt_create_org").submit(function(e) {
+        alert();
         e.preventDefault(e);
 		//var data = $(this).serializeArray();
         if ($("#orgName").val() != '' && $("#orgEmail").val() != '' && $("#orgPhone").val() != '' && $("#orgLocation").val() != '' && $("#orgAddress").val() != '') {

@@ -86,6 +86,7 @@ $(function() {
                         ShowNotif("Department created succesfully!", "success");
                     }
                     setTimeout(function() {
+                        $("#modalDepartmentSettings").modal('hide');
                         $("#create-department-spinner").hide();
                         $("#create-department-submit").removeAttr('disabled', 'disabled');
 						ActivateTab( 'kt_department_setting', 'kt_designation_setting')  
